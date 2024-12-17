@@ -1,0 +1,127 @@
+<?php
+
+namespace Database\Seeders;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Brand;
+use App\Models\Collection;
+use App\Models\Product;
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+
+    public $brands = [
+            [
+                'name' => 'Arcana Ceramica',
+                'country' => 'es'
+            ],
+            [
+                'name' => 'Atlas Concorde',
+                'country' => 'au'
+            ],
+            [
+                'name' => 'Atlas Concorde Rus',
+                'country' => 'us'
+            ],
+            [
+                'name' => 'Bisazza',
+                'country' => 'ru'
+            ]
+        ];
+    public function makeBrands()
+    {
+
+        $cover_directory = storage_path('app/public/fixed/test/300x300.png');
+        foreach ($this->brands as $var) {
+            $brand = Brand::create([
+                'name' => $var['name'],
+                'slug' => Str::slug($var['name'], "-")
+            ]);
+
+            $brand->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+        }
+    }
+
+    public function makeCollections()
+    {
+        $col_id = 1;
+        $brands = Brand::all();
+        foreach ($brands as $brand) {
+            // Определяем случайное количество коллекций (от 5 до 7)
+            $collectionsCount = random_int(5, 7);
+
+            for ($ci = 1; $ci <= $collectionsCount; $ci++) { // Создаем коллекцию у бренда
+                $collection = Collection::create([
+                    'name' => "Коллекция $col_id", // Название коллекции
+                    'slug' => Str::slug("Коллекция $col_id", "-"),
+                    'brand_id' => $brand['id']
+                ]);
+                $col_id += 1;
+                $rand = rand(1, 2);
+                $cover_directory = storage_path("app/public/fixed/test/420x420px_{$rand}.png");
+                $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+
+                for ($ex = 1; $ex <= 4; $ex++) { // Создаем коллекцию у бренда
+                    $rand = rand(1, 2);
+                    $cover_directory = storage_path("app/public/fixed/test/1300x700px_{$rand}.png");
+                    $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('examples');
+                }
+
+
+                for ($i = 1; $i <= 30; $i++) { // Создаем товары у коллекции
+                    $searchName = $brand['name'];
+
+                    $result = array_filter($this->brands, function ($brand) use ($searchName) {
+                        return $brand['name'] === $searchName;
+                    });
+                    $country = !empty($result) ? current($result)['country'] : null;
+
+                    $product = Product::create([
+                        'name' => "Товар $i (б {$brand['id']}, к {$collection['id']})",
+                        'brand_id' => $brand['id'],
+                        'country_code' => $country,
+                        'slug' => Str::slug("Товар $i (б {$brand['id']}, к {$collection['id']})"),
+                        'collection_id' => $collection['id'], // Присваиваем ID коллекции
+                    ]);
+                    $rand = rand(1, 2);
+                    $cover_directory =  storage_path("app/public/fixed/test/420x420px_{$rand}.png");
+                    $product->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+                }
+
+            }
+        }
+    }
+
+    public function run(): void
+    {
+        $file = new Filesystem;
+        $file->cleanDirectory('storage/app/public/media');
+
+        $this->call(CountriesSeeder::class);
+
+        $user = User::create([
+            'name' => 'admin',
+            'email' => 'admin@mail.ru',
+            'email_verified_at' => now(),
+            'password' => Hash::make('12345678'),
+            'remember_token' => Str::random(10),
+        ]);
+
+        $this->makeBrands();
+        $this->makeCollections();
+        // \App\Models\User::factory(10)->create();
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+    }
+}
