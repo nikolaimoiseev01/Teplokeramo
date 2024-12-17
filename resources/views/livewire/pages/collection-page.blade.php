@@ -1,0 +1,65 @@
+<main class="content flex-1">
+    <h1 class="mb-8 text-5xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
+
+    <div class="flex gap-8">
+        <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
+            <x-heroicon-c-heart class="w-4 h-4"/>
+            <span>В избранное</span>
+        </div>
+        <div class="flex px-4 justify-center items-center gap-2 text-green-700 rounded-2xl border-green-700 border">
+            <x-heroicon-c-heart class="w-4 h-4"/>
+            <span>В наличии</span>
+        </div>
+        <div class="flex px-4 justify-center items-center gap-2 rounded-2xl border border-black ">
+            <span>Хит продаж!</span>
+        </div>
+    </div>
+
+    <x-collection-slider class="mt-8 mb-8" :collection="$collection"/>
+
+    <h1 class="mb-8 text-5xl">{{$collection['name']}}</h1>
+
+    <p class="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula urna vitae
+        fringilla rutrum. Vestibulum
+        id massa tortor. Donec ut mattis augue. Nulla nec scelerisque purus. Fusce volutpat risus libero, eget pulvinar
+        dolor egestas at. Quisque sit amet venenatis erat, sit amet egestas sapien. Nunc sit amet mauris non eros
+        rhoncus porttitor ac in ex. Aliquam erat volutpat. Suspendisse ac finibus dui.</p>
+
+    <div class="flex mb-8">
+        <x-link-button class="text-xl">Добавить в корзину
+        </x-link-button>
+    </div>
+
+    <section class="flex flex-col mb-8" x-data="{ open: false }">
+        <div @click="open = !open" class="flex gap-2 items-center text-green-700 cursor-pointer">
+            <p class="border-b border-green-700">Технические характеристики</p>
+            <x-heroicon-o-chevron-down x-show="!open" class="w-6"/>
+            <x-heroicon-o-chevron-up x-show="open" class="w-6"/>
+        </div>
+        <div x-show="open" class="mt-4 flex flex-col gap-2">
+            <p><b class="text-xl">Производетель: </b>{{$collection->brand['name']}}</p>
+            <p><b class="text-xl">Страна: </b>{{$collection->product[0]->country['name']}}</p>
+            <p><b class="text-xl">Размеры, см: </b>тест</p>
+            <p><b class="text-xl">Толщина, см: </b>тест</p>
+            <p><b class="text-xl">Тип плитки: </b>тест</p>
+            <p><b class="text-xl">Применение: </b>тест</p>
+            <p><b class="text-xl">Материал: </b>тест</p>
+            <p><b class="text-xl">Калибр: </b>тест</p>
+            <p><b class="text-xl">Поверхность: </b>тест</p>
+            <p><b class="text-xl">Фактура: </b>тест</p>
+            <p><b class="text-xl">Стиль: </b>тест</p>
+            <p><b class="text-xl">Форма: </b>тест</p>
+            <p><b class="text-xl">Тип элемента: </b>тест</p>
+            <p><b class="text-xl">Категория: </b>тест</p>
+        </div>
+    </section>
+
+
+    <section>
+        <h1 class="mb-8">Все элементы</h1>
+        <x-products-slider :products="$collection->product"/>
+    </section>
+
+
+</main>
+
