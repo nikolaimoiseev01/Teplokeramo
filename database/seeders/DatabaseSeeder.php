@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -36,6 +37,8 @@ class DatabaseSeeder extends Seeder
                 'country' => 'ru'
             ]
         ];
+
+    public $areas = ['Для кухни', 'Для ванной', 'Для гостинной'];
     public function makeBrands()
     {
 
@@ -88,6 +91,7 @@ class DatabaseSeeder extends Seeder
                         'name' => "Товар $i (б {$brand['id']}, к {$collection['id']})",
                         'brand_id' => $brand['id'],
                         'country_code' => $country,
+                        'area_of_use' => json_encode(Arr::random($this->areas, rand(1, 3))),
                         'slug' => Str::slug("Товар $i (б {$brand['id']}, к {$collection['id']})"),
                         'collection_id' => $collection['id'], // Присваиваем ID коллекции
                     ]);

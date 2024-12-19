@@ -13,11 +13,11 @@ class DropdownSelect extends Component
     public $type = 'bordered';
     public $alltext;
 
-    public function __construct($model, $options, $alltext, $type=null)
+    public function __construct($model, $options, $alltext=null, $type=null)
     {
         $this->model = $model;
         $this->options = $options;
-        $this->alltext = $alltext;
+        $this->alltext = $alltext ?? null;
         $this->type = $type ?? 'bordered';
     }
 

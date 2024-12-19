@@ -18,7 +18,12 @@ class Product extends Model implements HasMedia
         'brand_id',
         'style',
         'country_code',
+        'area_of_use',
         'slug'
+    ];
+
+    protected $casts = [
+        'area_of_use' => 'array'
     ];
 
     public function collection(): BelongsTo

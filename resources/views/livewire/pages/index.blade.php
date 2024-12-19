@@ -1,23 +1,23 @@
 <main>
     <section style="background-image: url('/storage/fixed/welcome_background.png');"
              class="relative h-screen w-full">
-        <x-link-button class="absolute bottom-8 left-1/2 transform translate-x-[-50%] text-4xl rounded-3xl">УЗНАТЬ БОЛЬШЕ
+        <x-link-button class="absolute bottom-8 left-1/2 transform translate-x-[-50%] text-4xl !rounded-full">УЗНАТЬ БОЛЬШЕ
         </x-link-button>
     </section>
 
     <section class="content grid grid-rows-2 grid-flow-col gap-4 my-16 md:flex md:flex-col">
-        <div style="background-image: url('/storage/fixed/dlja_vannoi_background.png');"
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}" style="background-image: url('/storage/fixed/dlja_vannoi_background.png');"
             class="bg-cover row-span-1 h-96 relative">
             <span class="text-5xl font-semibold text-white absolute bottom-8 left-8">ДЛЯ<br>ВАННОЙ</span>
-        </div>
-        <div style="background-image: url('/storage/fixed/dlja_kuhni_background.png');"
+        </a>
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}" style="background-image: url('/storage/fixed/dlja_kuhni_background.png');"
              class="bg-contain col-span-1 h-96 bg-gold relative">
             <span class="text-5xl font-semibold text-white absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
-        </div>
-        <div style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
+        </a>
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}" style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
              class="bg-cover row-span-2 col-span-2 relative md:h-96">
             <span class="text-5xl font-semibold text-white absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
-        </div>
+        </a>
     </section>
 
     <section class="my-16 content uppercase flex justify-between items-center flex-wrap gap-8 md:justify-center md:text-center">
@@ -31,22 +31,22 @@
     </section>
 
     <section class="content grid grid-rows-2 grid-cols-3 grid-flow-col gap-4 my-16 flex-wrap md:flex md:flex-col">
-        <div style="background-image: url('/storage/fixed/dlja_vannoi_background.png');"
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}" style="background-image: url('/storage/fixed/dlja_vannoi_background.png');"
              class="bg-cover row-span-2 col-span-1 relative md:h-96">
             <span class="text-5xl font-semibold text-white absolute bottom-8 left-8">ДЛЯ<br>ВАННОЙ</span>
-        </div>
-        <div style="background-image: url('/storage/fixed/dlja_kuhni_background.png');"
+        </a>
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}" style="background-image: url('/storage/fixed/dlja_kuhni_background.png');"
              class="bg-contain row-span-2 col-span-1 bg-gold relative md:h-96">
             <span class="text-5xl font-semibold text-white absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
-        </div>
-        <div style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
+        </a>
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}" style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
              class="bg-cover row-span-1 col-span-1 h-96 relative">
             <span class="text-5xl font-semibold text-white absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
-        </div>
-        <div style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
+        </a>
+        <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}" style="background-image: url('/storage/fixed/dlja_vannoi_background_2.png');"
              class="bg-cover row-span-1 col-span-1 h-96 relative">
             <span class="text-5xl font-semibold text-white absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
-        </div>
+        </a>
     </section>
 
     <section class="content">

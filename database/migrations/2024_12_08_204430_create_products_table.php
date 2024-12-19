@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('collection_id');
             $table->string('country_code');
             $table->string('slug');
+            $table->json('area_of_use')->nullable();
             $table->string('style')->nullable();
             $table->timestamps();
         });

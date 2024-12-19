@@ -15,6 +15,5 @@ class CatalogPage extends Component
         return view('livewire.pages.catalog-page');
     }
     public function mount() {
-        $this->collections = Collection::all();
     }
 }

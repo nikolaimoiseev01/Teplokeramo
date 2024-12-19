@@ -6,7 +6,9 @@ use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -73,6 +75,17 @@ class ProductResource extends Resource
                             ->schema([
                                 Forms\Components\Textarea::make('desc')
                                     ->maxLength(255),
+                                Forms\Components\Section::make('Применение')->schema([
+                                    Repeater::make('area_of_use')
+                                        ->label('')
+                                         ->addActionLabel('Добавить свойство')
+                                        ->simple(
+                                            TextInput::make('area_of_use')
+                                                ->label('')
+                                                ->required(),
+                                        )
+                                ])
+
                             ]),
                         Tabs\Tab::make('Примеры')
                             ->schema([
