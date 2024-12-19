@@ -1,7 +1,9 @@
 <main class="content flex-1">
     <h1 class="mb-8 text-5xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
-
-    <div class="flex gap-8">
+    @if(Auth::check())
+        <a href="/admin/collections/{{$collection['id']}}/edit"  target="_blank" class="link mb-8 block">Коллекция в Админке</a>
+    @endif
+    <div class="flex gap-8 flex-wrap">
         <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
             <x-heroicon-c-heart class="w-4 h-4"/>
             <span>В избранное</span>

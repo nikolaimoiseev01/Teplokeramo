@@ -16,7 +16,7 @@
     />
 
 
-    <div class="flex gap-8">
+    <div class="flex gap-6 flex-wrap md:justify-center ">
         @foreach($brands as $brand)
             <x-cards.brand :brand="$brand"/>
         @endforeach

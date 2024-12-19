@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Random Grotesque Standard', ...defaultTheme.fontFamily.sans],
+                sans: ['Random Grotesque Spacious Book', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 gold: {
@@ -24,11 +24,19 @@ export default {
                 white: '#ffffff',
                 green: {
                     300: '#E5ECDC',
+                    400: '#B7C3AA',
                     500: '#9BAA8C',
                     700: '#7CAC56'
                 },
                 red: '#BE1114',
                 brown: '#864D36'
+            },
+            screens: {
+                '2xl': {'max': '1535px'}, // => @media (max-width: 1535px) { ... }
+                'xl': {'max': '1279px'}, // => @media (max-width: 1279px) { ... }
+                'lg': {'max': '1023px'}, // => @media (max-width: 1023px) { ... }
+                'md': {'max': '767px'}, // => @media (max-width: 767px) { ... }
+                'sm': {'max': '639px'}, // => @media (max-width: 639px) { ... }
             }
         },
     },

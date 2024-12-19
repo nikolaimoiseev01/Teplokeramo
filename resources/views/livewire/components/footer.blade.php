@@ -1,32 +1,57 @@
-<footer class="w-full mt-16 py-8 bg-green-500">
+<footer class="w-full mt-16 py-8 bg-green-400">
     <div class="content flex gap-8 flex-col">
         <div class="flex items-center justify-between">
-            <div class="flex items-start gap-8">
-                <x-application-logo class="w-16"/>
-                <a class="link">О нас</a>
-                <a class="link">Услуги</a>
-                <a class="link">Доставка</a>
-                <a class="link">Партнёрам</a>
-                <a class="link">Дизайнерам</a>
-            </div>
+            <x-application-logo class="w-16"/>
             <div class="flex gap-4">
-                <img src="/storage/static_images/socials_linkedin.png" class="rounded-full" alt="">
-                <img src="/storage/static_images/socials_linkedin.png" class="rounded-full" alt="">
-                <img src="/storage/static_images/socials_linkedin.png" class="rounded-full" alt="">
+                <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23.8594" cy="24.5" r="23.75" fill="white"/>
+                    <path d="M13.1273 35.6765H18.0105V19.8679H13.1273V35.6765Z" fill="#B7C3AA"/>
+                    <path
+                        d="M12.6833 14.821C12.6833 16.3796 13.9411 17.6413 15.5689 17.6413C17.1226 17.6413 18.3804 16.3796 18.3804 14.821C18.3804 13.2624 17.1226 11.9265 15.5689 11.9265C13.9411 11.9265 12.6833 13.2624 12.6833 14.821Z"
+                        fill="#B7C3AA"/>
+                    <path
+                        d="M31.4762 35.6765H36.4333V26.9929C36.4333 22.7624 35.4715 19.4226 30.5143 19.4226C28.1467 19.4226 26.519 20.7585 25.8531 22.0202H25.7791V19.8679H21.1179V35.6765H26.0011V27.8835C26.0011 25.8054 26.371 23.8015 28.9606 23.8015C31.4762 23.8015 31.4762 26.1765 31.4762 27.9577V35.6765Z"
+                        fill="#B7C3AA"/>
+                </svg>
+
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M47.6094 24.393C47.6094 11.3321 37.0912 0.75 24.1094 0.75C11.1275 0.75 0.609375 11.3321 0.609375 24.393C0.609375 36.2145 9.1376 46.034 20.4138 47.75V31.2571H14.4441V24.393H20.4138V19.2449C20.4138 13.3342 23.9199 9.99746 29.2263 9.99746C31.8795 9.99746 34.5328 10.4741 34.5328 10.4741V16.2896H31.5953C28.6578 16.2896 27.7102 18.1009 27.7102 20.0076V24.393H34.2485L33.2062 31.2571H27.7102V47.75C38.9864 46.034 47.6094 36.2145 47.6094 24.393Z"
+                        fill="white"/>
+                </svg>
+
+                <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24.3594" cy="24.5" r="23.75" fill="white"/>
+                    <path
+                        d="M35.4365 18.9449C36.528 18.1263 37.5103 17.144 38.2743 15.998C37.292 16.4345 36.146 16.762 34.9999 16.8711C36.2005 16.1617 37.0737 15.0702 37.5103 13.7059C36.4188 14.3608 35.1637 14.8519 33.9085 15.1248C32.817 13.9788 31.3436 13.3239 29.7064 13.3239C26.5412 13.3239 23.9763 15.8888 23.9763 19.054C23.9763 19.4906 24.0308 19.9272 24.14 20.3638C19.3922 20.0909 15.1355 17.7989 12.2977 14.3608C11.8066 15.1794 11.5337 16.1617 11.5337 17.2531C11.5337 19.2177 12.516 20.9641 14.0986 22.0009C13.1709 21.9464 12.2432 21.7281 11.4791 21.2915V21.3461C11.4791 24.1293 13.4438 26.4213 16.0632 26.967C15.6267 27.0762 15.0809 27.1853 14.5898 27.1853C14.2078 27.1853 13.8803 27.1308 13.4983 27.0762C14.2078 29.3682 16.3361 31.0054 18.8464 31.06C16.8818 32.588 14.4261 33.5158 11.752 33.5158C11.2609 33.5158 10.8243 33.4612 10.3877 33.4066C12.898 35.0438 15.8995 35.9715 19.1739 35.9715C29.7064 35.9715 35.4365 27.2945 35.4365 19.7089C35.4365 19.436 35.4365 19.2177 35.4365 18.9449Z"
+                        fill="#B7C3AA"/>
+                </svg>
+
             </div>
         </div>
 
-        <div class="flex justify-between">
+        <div class="flex justify-between flex-wrap gap-4">
             <div class="flex flex-col gap-4">
-                <a href="" class="link">Связаться с нами</a>
+                <a href="" class="text-white w-fit rounded px-2 bg-green-500">Связаться с нами</a>
                 <p class="text-white">Email: info@kerama.com</p>
                 <p class="text-white">+7(555)-567-8901</p>
                 <p class="text-white">Адрес: г. Москва, Смоленская- Сенная пл., 30-32</p>
             </div>
+            <div class="flex flex-col gap-4">
+                <a class="text-white">О нас</a>
+                <a class="text-white">Услуги</a>
+                <a class="text-white">Доставка</a>
+                <a class="text-white">Партнёрам</a>
+                <a class="text-white">Дизайнерам</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="text-white">Оферта</a>
+                <a class="text-white">Политика конфидициальности</a>
+            </div>
 
-            <div class="flex bg-white p-14 justify-between  rounded-2xl">
-                <input type="text">
-                <x-link-button class="bg-green">Подписаться на рассылку</x-link-button>
+            <div class="max-w-sm flex justify-center flex-col gap-4 bg-white p-8 rounded-2xl">
+                <input placeholder="Email" type="text">
+                <x-link-button class="bg-green-500">Подписаться на рассылку</x-link-button>
             </div>
         </div>
     </div>

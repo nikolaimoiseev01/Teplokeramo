@@ -1,17 +1,17 @@
 <header
     x-data="{ isHomePage: window.location.pathname === '/' }"
     :class="isHomePage ? 'absolute top-0 z-10 w-full' : ''"
-    class="mb-8">
+    class="pt-8 mb-8">
     <div class="content">
         <div class="flex items-center justify-between">
             <a href="/" wire:navigate><x-application-logo/></a>
             <div class="flex gap-8 items-center">
-                <div class="flex gap-4 items-center">
-                    <a href="{{route('catalog-page')}}" wire:navigate class="link">Каталог</a>
+                <div class="flex gap-4 items-center lg:hidden">
+                    <a href="{{route('catalog-page')}}" wire:navigate class="link text-lg">Каталог</a>
                     <a href="" class="link">Готовые решения</a>
                     <a href="{{route('brands-page')}}" wire:navigate class="link">Брэнды</a>
                 </div>
-                <div class="border rounded-xl border-black px-4 flex justify-center gap-4">
+                <div class="border rounded-xl border-black px-4 flex justify-center gap-4 md:hidden">
                     <input class="bg-transparent !border-none" type="text">
                     <x-heroicon-o-magnifying-glass class="w-6"/>
                 </div>

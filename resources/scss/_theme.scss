@@ -1,5 +1,12 @@
 @import 'variables';
 
+body {
+    font-size: 16px;
+    @media (max-width: 1023px) {
+        font-size: 14px;
+    }
+}
+
 .content {
     width: 90%;
     max-width: 1240px;
@@ -12,7 +19,7 @@ h1 {
 }
 
 h2 {
-    font-size: 30px;
+    //font-size: 30px;
 }
 
 a {
@@ -20,7 +27,6 @@ a {
 }
 
 .link {
-    font-size: 1.25rem;
     font-weight: 300;
     color: $color-black;
     width: fit-content;

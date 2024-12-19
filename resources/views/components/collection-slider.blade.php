@@ -14,7 +14,7 @@
     <div thumbsSlider="" class="swiper mt-2 mySwiper">
         <div class="swiper-wrapper">
             @foreach($collection->getMedia('examples') as $media)
-                <div class="swiper-slide">
+                <div class="cursor-pointer swiper-slide">
                     <img src="{{$media->getUrl()}}"/>
                 </div>
             @endforeach
@@ -24,13 +24,6 @@
 
 
 @push('page-js')
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
