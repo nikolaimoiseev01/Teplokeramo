@@ -1,9 +1,9 @@
 <main class="content flex-1">
-    <h1 class="mb-8 text-5xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
+    <h1 class="mb-10 text-5xl md:text-3xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
     @if(Auth::check())
         <a href="/admin/collections/{{$collection['id']}}/edit"  target="_blank" class="link mb-8 block">Коллекция в Админке</a>
     @endif
-    <div class="flex gap-8 flex-wrap">
+    <div class="flex gap-8 mb-10 flex-wrap text-xl ">
         <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
             <x-heroicon-c-heart class="w-4 h-4"/>
             <span>В избранное</span>
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <x-collection-slider class="mt-8 mb-8" :collection="$collection"/>
+    <x-collection-slider class="mb-10" :collection="$collection"/>
 
     <h1 class="mb-8 text-5xl">{{$collection['name']}}</h1>
 
@@ -34,7 +34,7 @@
 
     <section class="flex flex-col mb-8" x-data="{ open: false }">
         <div @click="open = !open" class="flex gap-2 items-center text-green-700 cursor-pointer">
-            <p class="border-b border-green-700">Технические характеристики</p>
+            <p class="border-b text-lg border-green-700">Технические характеристики</p>
             <x-heroicon-o-chevron-down x-show="!open" class="w-6"/>
             <x-heroicon-o-chevron-up x-show="open" class="w-6"/>
         </div>

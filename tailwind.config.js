@@ -11,11 +11,20 @@ export default {
 
     theme: {
         extend: {
+
             fontFamily: {
                 sans: ['Random Grotesque Spacious Book', ...defaultTheme.fontFamily.sans],
             },
+            spacing: {
+                '116': '29rem',
+                '128': '32rem',
+            },
+            letterSpacing: {
+                // widest: '.1em',
+            },
             colors: {
                 gold: {
+                    200: "#EEE5CF",
                     300: '#EFE5C8',
                     500: '#D9BF79',
                 } ,

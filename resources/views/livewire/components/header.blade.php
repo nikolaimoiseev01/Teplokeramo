@@ -1,19 +1,19 @@
 <header
     x-data="{ isHomePage: window.location.pathname === '/' }"
     :class="isHomePage ? 'absolute top-0 z-10 w-full' : ''"
-    class="pt-8 mb-8">
+    class="pt-8 mb-16">
     <div class="content">
-        <div class="flex items-center justify-between">
-            <a href="/" wire:navigate><x-application-logo/></a>
+        <div class="flex items-start justify-between">
+            <a href="/" wire:navigate><x-application-logo class="w-44 md:w-20"/></a>
             <div class="flex gap-8 items-center">
-                <div class="flex gap-4 items-center lg:hidden">
-                    <a href="{{route('catalog-page')}}" wire:navigate class="link text-lg">Каталог</a>
-                    <a href="" class="link">Готовые решения</a>
-                    <a href="{{route('brands-page')}}" wire:navigate class="link">Брэнды</a>
+                <div class="flex gap-6 items-center lg:hidden">
+                    <a href="{{route('catalog-page')}}" wire:navigate class="link text-xl">Каталог</a>
+                    <a href="" class="link text-xl">Готовые решения</a>
+                    <a href="{{route('brands-page')}}" wire:navigate class="link text-xl">Брэнды</a>
                 </div>
-                <div class="border rounded-xl border-black px-4 flex justify-center gap-4 md:hidden">
+                <div class="border rounded-xl px-4 flex justify-center bg-gold-200 h-9 w-64 gap-4 md:hidden relative">
                     <input class="bg-transparent !border-none" type="text">
-                    <x-heroicon-o-magnifying-glass class="w-6"/>
+                    <x-heroicon-o-magnifying-glass class="w-6 absolute right-2 top-1/2 transform translate-y-[-50%] "/>
                 </div>
                 <a href="">
                     <svg width="38" height="36" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

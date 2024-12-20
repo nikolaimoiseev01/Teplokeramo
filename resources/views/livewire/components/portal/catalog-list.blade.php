@@ -12,7 +12,6 @@
                   @click="tab = 'products'">{{morphos\Russian\pluralize($orig_products->count(), 'товар')}}</span>
         </div>
         <x-dropdown-select
-            class="mb-6"
             model="sort_option"
             type="no_border"
             :options="$sort_options"

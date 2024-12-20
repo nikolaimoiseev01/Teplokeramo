@@ -23,6 +23,18 @@ class BrandsPage extends Component
         $this->brands = Brand::all();
         $countries_ids = Product::distinct()->pluck('country_code');
         $this->countries = Country::whereIn('code', $countries_ids->toArray())->get();
+
+        $this->sort_options = [
+            [
+                'id' => 1,
+                'name' => 'По популярности'
+            ],
+            [
+                'id' => 2,
+                'name' => 'По цене'
+            ]
+        ];
+
     }
 
     public function updatedCountryFilter() {

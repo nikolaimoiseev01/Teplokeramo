@@ -1,21 +1,21 @@
 <form wire:submit="send" x-data id="myForm" action="/submit" method="POST">
     <h1 class="rounded-xl px-4 py-1 border border-black w-fit mb-8 md:text-xl">СВЯЖИТЕСЬ С НАМИ</h1>
     <div class="bg-green-300 p-8 flex gap-8 rounded-3xl lg:flex-wrap">
-        <div class="flex flex-col gap-4 w-1/2 lg:w-full">
+        <div class="flex flex-col gap-8 w-1/2 lg:w-full">
             <div class="flex flex-col">
                 <label for="">Имя</label>
-                <input required wire:model="name" type="text">
+                <input required wire:model="name" class="text-lg py-2" type="text">
             </div>
 
             <div class="flex flex-col">
                 <label for="">Email</label>
-                <input required wire:model="email" type="text">
+                <input class="text-lg py-2" required wire:model="email" type="text">
             </div>
             <div class="flex-1 flex flex-col">
                 <label for="">Сообщение</label>
-                <textarea required wire:model="text" class="h-full"></textarea>
+                <textarea required wire:model="text" class="text-lg py-2 min-h-48 h-full"></textarea>
             </div>
-            <button class="px-12 py-3 bg-dark text-white rounded-xl text-center">
+            <button class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-lg tracking-wider text-center">
                 <span wire:loading.remove>ОТПРАВИТЬ СООБЩЕНИЕ</span>
                 <svg wire:loading aria-hidden="true" class="w-6 h-6 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                      viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,7 @@
 <main class="content flex-1">
-    <h1 class="uppercase mb-8 text-4xl">Партнерам</h1>
+    <h1 class="uppercase mb-10 text-5xl md:text-3xl">Партнерам</h1>
 
-    <div class="flex flex-wrap gap-20 mb-8 uppercase underline md:gap-8 md:flex-col">
+    <div class="flex flex-wrap text-lg gap-20 mb-10 uppercase underline md:gap-8 md:flex-col">
         <a href="/" wire:navigate>Проекты</a>
         <div class="w-0.5 h-6 bg-black md:hidden"></div>
         <a href="" wire:navigate>Новости</a>
@@ -9,7 +9,7 @@
         <a href="{{route('catalog-page')}}" wire:navigate>Каталог</a>
     </div>
 
-    <p class="mb-8">
+    <p class="mb-10 text-lg">
         Компания «Тепло Керамо» с 2001 года успешно развивает свою деятельность на российском рынке и специализируется
         на поставках отделочных материалов: керамического гранита, керамической плитки, стеклянной и мраморной мозаики и
         расходных материалов для их укладки. Нашими основными поставщиками являются ведущие российские, итальянские,
