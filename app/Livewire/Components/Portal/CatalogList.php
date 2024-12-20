@@ -38,15 +38,13 @@ class CatalogList extends Component
     public function mount()
     {
         $this->orig_products = Product::
-//            where('id', 1)
             when($this->f_area_of_use, function ($query) {
                 $query->whereJsonContains('area_of_use', $this->f_area_of_use);
             })
-//            ->when($this->f_brand_id, function ($query) {
-//                $query->where('brand_id', $this->f_brand_id);
-//            })
+            ->when($this->f_brand_id, function ($query) {
+                $query->where('brand_id', $this->f_brand_id);
+            })
             ->get();
-        dd($this->orig_products);
         $col_ids_from_products = $this->orig_products->pluck('collection_id')->unique();
         $this->orig_collections = Collection::whereIn('id', $col_ids_from_products)->get();
 
