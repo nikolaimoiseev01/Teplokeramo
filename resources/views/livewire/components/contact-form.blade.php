@@ -29,7 +29,7 @@
             </button>
         </div>
 
-        <img src="/fixed/feedback_img.png" class="lg:w-full" alt="">
+        <x-application-logo class="!w-1/2"/>
 
     </div>
 </form>

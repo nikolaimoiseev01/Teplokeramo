@@ -1,8 +1,10 @@
 <main>
     <section style="background-image: url('/fixed/welcome_background.png');"
              class="relative h-screen w-full">
-        <x-link-button class="absolute bottom-8 left-1/2 transform translate-x-[-50%] text-4xl">УЗНАТЬ БОЛЬШЕ
+        <x-link-button href="{{route('about-page')}}" wire:navigate class="absolute w-max bottom-8 left-1/2 transform translate-x-[-50%] text-4xl md:text-xl sm:!text-sm">УЗНАТЬ БОЛЬШЕ
         </x-link-button>
+        <img src="/fixed/circle_white.png" class="absolute left-1/2 hidden top-1/2 transform translate-y-[-50%]  translate-x-[-50%] md:block" alt="">
+        <img src="/fixed/circle_text.png" class="absolute -bottom-52 z-40 right-10 md:hidden" alt="">
     </section>
 
     <section class="content grid grid-rows-2 grid-flow-col gap-4 my-16 md:flex md:flex-col">
