@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => Str::slug($var['name'], "-")
             ]);
 
-            $brand->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+            $brand->addMediaFromUrl($cover_directory)->preservingOriginal()->toMediaCollection('cover');
         }
     }
 
@@ -70,12 +70,12 @@ class DatabaseSeeder extends Seeder
                 $col_id += 1;
                 $rand = rand(1, 2);
                 $cover_directory = url('/') . "/fixed/test/420x420px_{$rand}.png";
-                $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+                $collection->addMediaFromUrl($cover_directory)->preservingOriginal()->toMediaCollection('cover');
 
                 for ($ex = 1; $ex <= 4; $ex++) { // Создаем коллекцию у бренда
                     $rand = rand(1, 2);
                     $cover_directory =  url('/') . "/fixed/test/1300x700px_{$rand}.png";
-                    $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('examples');
+                    $collection->addMediaFromUrl($cover_directory)->preservingOriginal()->toMediaCollection('examples');
                 }
 
 
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
                     ]);
                     $rand = rand(1, 2);
                     $cover_directory =   url('/') . "/fixed/test/420x420px_{$rand}.png";
-                    $product->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
+                    $product->addMediaFromUrl($cover_directory)->preservingOriginal()->toMediaCollection('cover');
                 }
 
             }
@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
 
 
         $this->makeBrands();
-//        $this->makeCollections();
+        $this->makeCollections();
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
