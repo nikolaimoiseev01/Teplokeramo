@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
     public function makeBrands()
     {
 
-        $cover_directory = storage_path('app/public/fixed/test/300x300.png');
+        $cover_directory =  url('/') . "/fixed/test/300x300.png";
         foreach ($this->brands as $var) {
             $brand = Brand::create([
                 'name' => $var['name'],
@@ -69,12 +69,12 @@ class DatabaseSeeder extends Seeder
                 ]);
                 $col_id += 1;
                 $rand = rand(1, 2);
-                $cover_directory = storage_path("app/public/fixed/test/420x420px_{$rand}.png");
+                $cover_directory = url('/') . "/fixed/test/420x420px_{$rand}.png";
                 $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
 
                 for ($ex = 1; $ex <= 4; $ex++) { // Создаем коллекцию у бренда
                     $rand = rand(1, 2);
-                    $cover_directory = storage_path("app/public/fixed/test/1300x700px_{$rand}.png");
+                    $cover_directory =  url('/') . "/fixed/test/1300x700px_{$rand}.png";
                     $collection->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('examples');
                 }
 
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
                         'collection_id' => $collection['id'], // Присваиваем ID коллекции
                     ]);
                     $rand = rand(1, 2);
-                    $cover_directory =  storage_path("app/public/fixed/test/420x420px_{$rand}.png");
+                    $cover_directory =   url('/') . "/fixed/test/420x420px_{$rand}.png";
                     $product->addMedia($cover_directory)->preservingOriginal()->toMediaCollection('cover');
                 }
 
@@ -121,8 +121,9 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
+
         $this->makeBrands();
-        $this->makeCollections();
+//        $this->makeCollections();
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
