@@ -117,7 +117,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@mail.ru',
             'email_verified_at' => now(),
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('zXW2QSXj5eyN'),
             'remember_token' => Str::random(10),
         ]);
 
