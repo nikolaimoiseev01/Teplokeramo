@@ -3,7 +3,7 @@
         <div class="bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse absolute w-full h-full z-0"></div>
         <img src="{{$collection->getFIrstMediaUrl('cover')}}" class="w-full absolute w-full h-full z-10"  alt="">
     </div>
-    <h2 class="text-3xl">{{$collection['name']}}</h2>
+    <h2 class="text-3xl">{{$collection['name']}}2</h2>
     <div class="flex gap-2">
         <p>{{$collection->brand['name']}}</p>
         <x-icon name="flag-country-{{$collection->product[0]['country_code']}}" class="w-4"/>
