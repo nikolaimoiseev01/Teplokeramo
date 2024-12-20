@@ -21,7 +21,7 @@ class ContactForm extends Component
     {
 
         $title = 'Новая заявка на консультацию!';
-        $text = "*Имя:* {$this->name} \n*Телефон:* {$this->email} \n*Вопрос:* {$this->text}";
+        $text = "*Имя:* {$this->name} \n*Email:* {$this->email} \n*Сообщение:* {$this->text}";
 
         // Посылаем Telegram уведомление нам
         Notification::route('telegram', config('cons.telegram_chat_id'))
