@@ -1,7 +1,7 @@
 <main>
     <section style="background-image: url('/fixed/welcome_background.png');"
              class="relative h-screen w-full">
-        <x-link-button class="absolute bottom-8 left-1/2 transform translate-x-[-50%] text-4xl !rounded-full">УЗНАТЬ БОЛЬШЕ
+        <x-link-button class="absolute bottom-8 left-1/2 transform translate-x-[-50%] text-4xl">УЗНАТЬ БОЛЬШЕ
         </x-link-button>
     </section>
 

@@ -38,11 +38,11 @@
                 <p class="text-white">Адрес: г. Москва, Смоленская- Сенная пл., 30-32</p>
             </div>
             <div class="flex flex-col gap-4">
-                <a class="text-white">О нас</a>
+                <a href="{{route('about-page')}}" wire:navigate class="text-white">О нас</a>
                 <a class="text-white">Услуги</a>
                 <a class="text-white">Доставка</a>
-                <a class="text-white">Партнёрам</a>
-                <a class="text-white">Дизайнерам</a>
+                <a href="{{route('to-partners-page')}}" wire:navigate class="text-white">Партнёрам</a>
+                <a href="{{route('to-designers-page')}}" wire:navigate class="text-white">Дизайнерам</a>
             </div>
             <div class="flex flex-col gap-4">
                 <a class="text-white">Оферта</a>

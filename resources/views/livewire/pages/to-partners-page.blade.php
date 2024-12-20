@@ -1,0 +1,34 @@
+<main class="content flex-1">
+    <h1 class="uppercase mb-8 text-4xl">Партнерам</h1>
+
+    <div class="flex flex-wrap gap-20 mb-8 uppercase underline md:gap-8 md:flex-col">
+        <a href="/" wire:navigate>Проекты</a>
+        <div class="w-0.5 h-6 bg-black md:hidden"></div>
+        <a href="" wire:navigate>Новости</a>
+        <div class="w-0.5 h-6 bg-black md:hidden"></div>
+        <a href="{{route('catalog-page')}}" wire:navigate>Каталог</a>
+    </div>
+
+    <p class="mb-8">
+        Компания «Тепло Керамо» с 2001 года успешно развивает свою деятельность на российском рынке и специализируется
+        на поставках отделочных материалов: керамического гранита, керамической плитки, стеклянной и мраморной мозаики и
+        расходных материалов для их укладки. Нашими основными поставщиками являются ведущие российские, итальянские,
+        испанские и другие мировые фабрики. Мы предлагаем огромный ассортимент керамических изделий, применяемых в
+        отделке как жилых и коммерческих интерьеров так и больших архитектурных ансамблей.
+    </p>
+
+    <div class="flex gap-4 flex-wrap mb-16">
+        <img src="/fixed/designers_pic_1.png" class="w-full h-96" alt="">
+        <div class="grid grid-cols-3 gap-4 w-full max-w-full md:flex md:flex-col">
+            <img src="/fixed/partners_pic_2.png" class="h-auto w-full object-cover" alt="">
+            <img src="/fixed/partners_pic_3.png" class="h-auto w-full object-cover" alt="">
+            <img src="/fixed/partners_pic_4.png" class="h-auto w-full object-cover" alt="">
+        </div>
+    </div>
+
+    <div class="w-full flex">
+        <x-link-button class="text-4xl mx-auto">СВЯЗАТЬСЯ С НАМИ
+        </x-link-button>
+    </div>
+
+</main>

@@ -1,11 +1,14 @@
 <?php
 
+use App\Livewire\Pages\AboutPage as AboutPageAlias;
 use App\Livewire\Pages\BrandPage;
 use App\Livewire\Pages\BrandsPage as BrandsAlias;
 use App\Livewire\Pages\CatalogPage as CatalogPageAlias;
 use App\Livewire\Pages\CollectionPage as CollectionPageAlias;
 use App\Livewire\Pages\Index as IndexAlias;
 use App\Livewire\Pages\ProductPage as ProductPageAlias;
+use App\Livewire\Pages\ToDesignersPage as ToDesignersPageAlias;
+use App\Livewire\Pages\ToPartnersPage as ToPartnersPageAlias;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', IndexAlias::class);
+Route::get('/about', AboutPageAlias::class)->name('about-page');
+Route::get('/to-partners', ToPartnersPageAlias::class)->name('to-partners-page');
+Route::get('/to-designers', ToDesignersPageAlias::class)->name('to-designers-page');
 Route::get('/catalog', CatalogPageAlias::class)->name('catalog-page');
 Route::get('/brands', BrandsAlias::class)->name('brands-page');
 Route::get('/brand/{slug}', BrandPage::class)->name('brand-page');
