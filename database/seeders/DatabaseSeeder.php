@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
                         'name' => "Товар $i (б {$brand['id']}, к {$collection['id']})",
                         'brand_id' => $brand['id'],
                         'country_code' => $country,
-                        'area_of_use' => json_encode(Arr::random($this->areas, rand(1, 3))),
+                        'area_of_use' => json_encode(Arr::random($this->areas, rand(1, 3)), JSON_UNESCAPED_UNICODE),
                         'slug' => Str::slug("Товар $i (б {$brand['id']}, к {$collection['id']})"),
                         'collection_id' => $collection['id'], // Присваиваем ID коллекции
                     ]);
