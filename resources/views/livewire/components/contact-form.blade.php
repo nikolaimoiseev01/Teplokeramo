@@ -29,7 +29,7 @@
             </button>
         </div>
 
-        <img src="/storage/fixed/feedback_img.png" class="lg:w-full" alt="">
+        <img src="/fixed/feedback_img.png" class="lg:w-full" alt="">
 
     </div>
 </form>
