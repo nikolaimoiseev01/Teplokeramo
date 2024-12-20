@@ -29,7 +29,7 @@
             </button>
         </div>
 
-        <x-application-logo class="!w-1/2"/>
+        <x-application-logo class="!w-1/2 lg:!w-full"/>
 
     </div>
 </form>
