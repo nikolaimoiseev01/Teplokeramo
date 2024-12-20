@@ -1,5 +1,5 @@
 <form wire:submit="send" x-data id="myForm" action="/submit" method="POST">
-    <h1 class="rounded-xl px-4 py-1 border border-black w-fit mb-8">СВЯЖИТЕСЬ С НАМИ</h1>
+    <h1 class="rounded-xl px-4 py-1 border border-black w-fit mb-8 md:text-xl">СВЯЖИТЕСЬ С НАМИ</h1>
     <div class="bg-green-300 p-8 flex gap-8 rounded-3xl lg:flex-wrap">
         <div class="flex flex-col gap-4 w-1/2 lg:w-full">
             <div class="flex flex-col">
