@@ -1,5 +1,5 @@
 <div class="flex relative">
-    <div class="swiper-button-next text-green-500"></div>
+    <div class="swiper-button-next next2 text-green-500"></div>
     <div class="swiper  productSlider">
         <div class="swiper-wrapper">
             @foreach($products as $key => $product)
@@ -9,7 +9,7 @@
             @endforeach
         </div>
     </div>
-    <div class="swiper-button-prev text-green-500"></div>
+    <div class="swiper-button-prev prev2 text-green-500"></div>
 </div>
 
 <style>
@@ -41,8 +41,8 @@
         centerInsufficientSlides: true,
         spaceBetween: 20,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".next2",
+            prevEl: ".prev2",
         },
         breakpoints: {
             640: {

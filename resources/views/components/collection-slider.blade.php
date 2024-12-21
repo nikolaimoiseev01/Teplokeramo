@@ -8,14 +8,14 @@
             @endforeach
 
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next next1"></div>
+        <div class="swiper-button-prev prev1"></div>
     </div>
     <div thumbsSlider="" class="swiper mt-2 mySwiper">
         <div class="swiper-wrapper">
             @foreach($collection->getMedia('examples') as $media)
                 <div class="cursor-pointer h-56 md:h-24 swiper-slide">
-                    <img class="object-cover" src="{{$media->getUrl()}}"/>
+                    <img class="object-cover h-full" src="{{$media->getUrl()}}"/>
                 </div>
             @endforeach
         </div>
@@ -35,8 +35,8 @@
         var swiper2 = new Swiper(".mySwiper2", {
             spaceBetween: 10,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".next1",
+                prevEl: ".prev1",
             },
             thumbs: {
                 swiper: swiper,
