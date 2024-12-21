@@ -75,7 +75,7 @@
 
 
     <section class="mb-8">
-        <h1 class="mb-8">Все элементы</h1>
+        <h1 class="mb-8 border-b-2 border-red w-fit">Все элементы</h1>
         <x-products-slider :products="$collection->product"/>
     </section>
 
