@@ -31,7 +31,7 @@
 
     <x-collection-slider class="mb-10" :collection="$collection"/>
 
-    <h1 class="mb-8 text-5xl md:text-3xl">{{$collection['name']}}</h1>
+    <h1 class="mb-10 text-5xl md:text-3xl">{{$collection['name']}}</h1>
 
     <p class="text-lg mb-8 md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula urna vitae
         fringilla rutrum. Vestibulum
@@ -39,9 +39,14 @@
         dolor egestas at. Quisque sit amet venenatis erat, sit amet egestas sapien. Nunc sit amet mauris non eros
         rhoncus porttitor ac in ex. Aliquam erat volutpat. Suspendisse ac finibus dui.</p>
 
-    <div class="flex mb-8">
-        <x-link-button class="text-xl">Добавить в корзину
-        </x-link-button>
+    <div class="flex mb-10 justify-between">
+        <div class="flex gap-8">
+            <div class="rounded-full w-16 h-16 bg-green-500"></div>
+            <div class="rounded-full w-16 h-16 bg-gold-300"></div>
+            <div class="rounded-full w-16 h-16 bg-gray-500"></div>
+            <div class="rounded-full w-16 h-16 bg-black"></div>
+        </div>
+        <x-link-button class="text-3xl uppercase tracking-widest">Добавить в корзину</x-link-button>
     </div>
 
     <section class="flex flex-col mb-8" x-data="{ open: false }">
