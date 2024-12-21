@@ -1,5 +1,5 @@
 <a wire:key="{{$collection['id']}}" class=" flex flex-col gap-2 max-w-80" href="{{route('collection-page', $collection['slug'])}}" wire:navigate>
-    <div class="w-72 h-72 relative">
+    <div class="w-72 h-72 md:w-52 md:h-52 relative">
         <div class="bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse absolute w-full h-full z-0"></div>
         <img src="{{$collection->getFIrstMediaUrl('cover')}}" class="w-full absolute w-full h-full z-10"  alt="">
     </div>
