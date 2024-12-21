@@ -1,9 +1,9 @@
 <div {{ $attributes->merge(['class' => '']) }}>
-    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="max-h-96 swiper mySwiper2">
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
         <div class="swiper-wrapper">
             @foreach($collection->getMedia('examples') as $media)
-                <div class="swiper-slide">
-                    <img class="max-h-96 w-full object-cover" src="{{$media->getUrl()}}"/>
+                <div class="h-116 swiper-slide">
+                    <img class="h-full w-full object-cover" src="{{$media->getUrl()}}"/>
                 </div>
             @endforeach
 
