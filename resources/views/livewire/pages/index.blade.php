@@ -1,6 +1,21 @@
 <main>
-    <section style="background-image: url('/fixed/welcome_background.png');"
-             class="relative h-screen w-full">
+    <style>
+
+        /* Основной фон для больших экранов */
+        .welcome-section {
+            background-image: url('/fixed/welcome_background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Изменение фона для маленьких экранов */
+        @media (max-width: 768px) {
+            .welcome-section {
+                background-image: url('/fixed/welcome_background_small.png');
+            }
+        }
+    </style>
+    <section class="welcome-section relative h-screen w-full">
         <x-link-button href="{{route('about-page')}}"
                        wire:navigate
                        class="absolute w-max py-7 bottom-10 left-1/2 transform translate-x-[-50%] text-4xl md:text-xl md:py-4">
@@ -8,7 +23,10 @@
         </x-link-button>
         <img src="/fixed/circle_white.png"
              class="absolute left-1/2 hidden top-1/2 transform translate-y-[-50%]  translate-x-[-50%] md:block" alt="">
-        <img src="/fixed/circle_text.png" class="absolute -bottom-52 z-40 right-10 md:hidden" alt="">
+        <div class="content h-20 w-full absolute bottom-0 left-1/2 translate-x-[-50%] z-10">
+            <img src="/fixed/circle_text.png" class="absolute -bottom-52 z-40 right-0 md:hidden" alt="">
+        </div>
+
     </section>
 
     <section class="content grid grid-rows-2 grid-flow-col gap-4 my-16 text-4xl font-semibold text-white md:flex md:flex-col md:text-3xl">
@@ -39,11 +57,20 @@
         <h1 class="">Разработка<br>3d проекта</h1>
     </section>
 
+    <style>
+
+        /* Изменение фона для маленьких экранов */
+        @media (max-width: 768px) {
+            .sant-block {
+                background-position: 0 780px;
+            }
+        }
+    </style>
     <section
         class="content flex gap-4 my-16 flex-wrap md:flex md:flex-col uppercase text-4xl md:text-3xl leading-8 font-semibold text-white">
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}"
            style="background-image: url('/fixed/santechnika.png');"
-           class="bg-cover flex-1 relative md:h-116 md:flex-initial">
+           class="sant-block bg-cover flex-1 relative md:h-116 md:flex-initial">
             <span class=" absolute top-8 left-8">Сантехника</span>
         </a>
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"

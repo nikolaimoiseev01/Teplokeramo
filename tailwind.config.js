@@ -16,7 +16,7 @@ export default {
                 sans: ['Random Grotesque Spacious Book', ...defaultTheme.fontFamily.sans],
             },
             spacing: {
-                '116': '29rem',
+                '116': '29rem', // 464px
                 '128': '32rem',
             },
             letterSpacing: {

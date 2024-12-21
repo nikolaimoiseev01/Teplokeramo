@@ -14,8 +14,8 @@
     <div thumbsSlider="" class="swiper mt-2 mySwiper">
         <div class="swiper-wrapper">
             @foreach($collection->getMedia('examples') as $media)
-                <div class="cursor-pointer swiper-slide">
-                    <img src="{{$media->getUrl()}}"/>
+                <div class="cursor-pointer h-56 md:h-24 swiper-slide">
+                    <img class="object-cover" src="{{$media->getUrl()}}"/>
                 </div>
             @endforeach
         </div>

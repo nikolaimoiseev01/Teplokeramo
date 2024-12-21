@@ -4,18 +4,18 @@
         <div class="flex flex-col gap-8 w-1/2 lg:w-full">
             <div class="flex flex-col">
                 <label for="">Имя</label>
-                <input required wire:model="name" class="text-lg py-2" type="text">
+                <input placeholder="Имя" required wire:model="name" class="text-lg py-2 px-6 placeholder:text-base" type="text">
             </div>
 
             <div class="flex flex-col">
                 <label for="">Email</label>
-                <input class="text-lg py-2" required wire:model="email" type="text">
+                <input placeholder="Email" class="text-lg py-2 px-6 placeholder:text-base" required wire:model="email" type="text">
             </div>
             <div class="flex-1 flex flex-col">
                 <label for="">Сообщение</label>
-                <textarea required wire:model="text" class="text-lg py-2 min-h-48 h-full"></textarea>
+                <textarea placeholder="Сообщение" required wire:model="text" class="text-lg py-2 px-6 placeholder:text-base min-h-48 h-full"></textarea>
             </div>
-            <button class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-lg tracking-wider text-center">
+            <button class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-base sm:!text-xs tracking-wider text-center">
                 <span wire:loading.remove>ОТПРАВИТЬ СООБЩЕНИЕ</span>
                 <svg wire:loading aria-hidden="true" class="w-6 h-6 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                      viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

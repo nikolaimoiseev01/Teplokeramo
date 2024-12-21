@@ -5,7 +5,7 @@
     @endif
 
     <div class="flex gap-4 flex-wrap justify-between mb-8 items-center">
-        <div class="text-lg flex gap-4">
+        <div class="text-xl flex gap-4">
             <span class="cursor-pointer" :class="{ 'border-b-2 border-red': tab === 'collections' }"
                   @click="tab = 'collections'">{{morphos\Russian\pluralize($orig_collections->count(), 'коллекция')}}</span>
             <span class="cursor-pointer" :class="{ 'border-b-2 border-red': tab === 'products' }"

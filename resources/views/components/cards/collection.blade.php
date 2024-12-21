@@ -9,7 +9,7 @@
         <x-icon name="flag-country-{{$collection->product[0]['country_code']}}" class="w-4"/>
         <p>{{$collection->product[0]->country['name']}}</p>
     </div>
-    <p class="text-xl">От <b>999 руб.</b></p>
+    <p class="text-xl">От <b>999 руб. за м2</b></p>
     <p class="text-green-700 text-xl font-bold flex gap-2"><x-heroicon-s-check-circle class="w-4" />В наличии</p>
 
 </a>

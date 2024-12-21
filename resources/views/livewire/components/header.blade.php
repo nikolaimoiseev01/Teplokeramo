@@ -9,7 +9,7 @@
                 <div class="flex gap-6 items-center lg:hidden">
                     <a href="{{route('catalog-page')}}" wire:navigate class="link text-xl">Каталог</a>
                     <a href="" class="link text-xl">Готовые решения</a>
-                    <a href="{{route('brands-page')}}" wire:navigate class="link text-xl">Брэнды</a>
+                    <a href="{{route('brands-page')}}" wire:navigate class="link text-xl">Бренды</a>
                 </div>
                 <div class="border rounded-xl px-4 flex justify-center bg-gold-200 h-9 w-64 gap-4 md:hidden relative">
                     <input class="bg-transparent !border-none" type="text">

@@ -18,7 +18,7 @@
     </p>
 
     <div class="flex gap-4 flex-wrap mb-16">
-        <img src="/fixed/designers_pic_1.png" class="w-full h-96" alt="">
+        <img src="/fixed/designers_pic_1.png" class="w-full h-116" alt="">
         <div class="grid grid-cols-3 gap-4 w-full max-w-full md:flex md:flex-col">
             <img src="/fixed/partners_pic_2.png" class="h-auto w-full object-cover" alt="">
             <img src="/fixed/partners_pic_3.png" class="h-auto w-full object-cover" alt="">

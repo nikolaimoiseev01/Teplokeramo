@@ -1,9 +1,21 @@
 <main class="content flex-1">
+    <div class="flex gap-6 flex-wrap mb-10 text-xl md:text-base">
+        <a href="/" wire:navigate>Главная</a>
+        <x-heroicon-s-chevron-right class="w-6"/>
+        <a href="{{route('catalog-page')}}" wire:navigate>Каталог</a>
+        <x-heroicon-s-chevron-right class="w-6"/>
+        <a href="{{route('brands-page')}}" wire:navigate>Производители</a>
+        <x-heroicon-s-chevron-right class="w-6"/>
+        <a href="{{route('brand-page', $collection->brand['slug'])}}" wire:navigate>{{$collection->brand['name']}}</a>
+        <x-heroicon-s-chevron-right class="w-6"/>
+        <p>{{$collection['name']}}</p>
+    </div>
+
     <h1 class="mb-10 text-5xl md:text-3xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
     @if(Auth::check())
         <a href="/admin/collections/{{$collection['id']}}/edit"  target="_blank" class="link mb-8 block">Коллекция в Админке</a>
     @endif
-    <div class="flex gap-8 mb-10 flex-wrap text-xl ">
+    <div class="flex gap-8 mb-10 flex-wrap text-xl md:text-base ">
         <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
             <x-heroicon-c-heart class="w-4 h-4"/>
             <span>В избранное</span>
@@ -19,9 +31,9 @@
 
     <x-collection-slider class="mb-10" :collection="$collection"/>
 
-    <h1 class="mb-8 text-5xl">{{$collection['name']}}</h1>
+    <h1 class="mb-8 text-5xl md:text-3xl">{{$collection['name']}}</h1>
 
-    <p class="text-lg mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula urna vitae
+    <p class="text-lg mb-8 md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula urna vitae
         fringilla rutrum. Vestibulum
         id massa tortor. Donec ut mattis augue. Nulla nec scelerisque purus. Fusce volutpat risus libero, eget pulvinar
         dolor egestas at. Quisque sit amet venenatis erat, sit amet egestas sapien. Nunc sit amet mauris non eros
@@ -57,10 +69,14 @@
     </section>
 
 
-    <section>
+    <section class="mb-8">
         <h1 class="mb-8">Все элементы</h1>
         <x-products-slider :products="$collection->product"/>
     </section>
+
+    <div class="content h-20 w-full z-10 relative">
+        <img src="/fixed/circle_text.png" class="absolute top-4 z-40 left-1/2 transform translate-x-[-50%]  md:hidden" alt="">
+    </div>
 
 
 </main>
