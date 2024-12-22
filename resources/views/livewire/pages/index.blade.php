@@ -22,9 +22,9 @@
             УЗНАТЬ БОЛЬШЕ
         </x-link-button>
         <img src="/fixed/circle_white.png"
-             class="absolute left-1/2 hidden top-1/2 transform translate-y-[-50%]  translate-x-[-50%] md:block" alt="">
+             class="absolute left-1/2 hidden top-1/2 transform translate-y-[-50%]  translate-x-[-50%] md:block animate-spin-slow" alt="">
         <div class="content h-20 w-full absolute bottom-0 left-1/2 translate-x-[-50%] z-10">
-            <img src="/fixed/circle_text.png" class="absolute -bottom-52 z-40 right-0 md:hidden" alt="">
+            <img src="/fixed/circle_text.png" class="absolute -bottom-52 z-40 right-0 md:hidden animate-spin-slow" alt="">
         </div>
 
     </section>

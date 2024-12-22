@@ -19,6 +19,9 @@ export default {
                 '116': '29rem', // 464px
                 '128': '32rem',
             },
+            animation: {
+                'spin-slow': 'spin 20s linear infinite', // Регулируйте скорость вращения через время (4s)
+            },
             letterSpacing: {
                 // widest: '.1em',
             },
