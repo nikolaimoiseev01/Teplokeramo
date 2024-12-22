@@ -1,7 +1,7 @@
 <main class="content flex-1">
     <h1 class="uppercase mb-10 text-5xl md:text-3xl">Партнерам</h1>
 
-    <div class="flex flex-wrap text-lg gap-20 mb-10 uppercase underline md:gap-8 md:flex-col">
+    <div class="flex flex-wrap text-lg gap-20 mb-10 uppercase underline md:gap-8">
         <a href="/" wire:navigate>Проекты</a>
         <div class="w-0.5 h-6 bg-black md:hidden"></div>
         <a href="" wire:navigate>Новости</a>
@@ -18,7 +18,7 @@
     </p>
 
     <div class="flex gap-4 flex-wrap mb-16">
-        <img src="/fixed/designers_pic_1.png" class="w-full h-116" alt="">
+        <img src="/fixed/designers_pic_1.png" class="w-full h-116 md:h-80" alt="">
         <div class="grid grid-cols-3 gap-4 w-full max-w-full md:flex md:flex-col">
             <img src="/fixed/partners_pic_2.png" class="h-auto w-full object-cover" alt="">
             <img src="/fixed/partners_pic_3.png" class="h-auto w-full object-cover" alt="">

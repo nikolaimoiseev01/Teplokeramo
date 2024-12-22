@@ -1,7 +1,7 @@
 <header
     x-data="{ isHomePage: window.location.pathname === '/' }"
     :class="isHomePage ? 'absolute top-0 z-10 w-full' : ''"
-    class="pt-8 mb-16">
+    class="pt-8 mb-16 md:mb-10">
     <div class="content">
         <div class="flex items-start justify-between">
             <a href="/" wire:navigate><x-application-logo class="w-44 md:w-20"/></a>

@@ -1,5 +1,5 @@
 <main class="content flex-1">
-    <div class="w-full relative mt-16">
+    <div class="w-full relative">
 
         <h1 class="uppercase mb-10 text-5xl md:text-3xl">Дизайнерам</h1>
 
@@ -24,7 +24,7 @@
     </p>
 
     <div class="flex gap-4 flex-wrap mb-16">
-        <img src="/fixed/designers_pic_1.png" class="w-full h-116" alt="">
+        <img src="/fixed/designers_pic_1.png" class="w-full h-116 md:h-80" alt="">
         <div class="grid grid-cols-3 gap-4 w-full max-w-full md:flex md:flex-col">
             <img src="/fixed/designers_pic_2.png" class="h-auto w-full object-cover" alt="">
             <img src="/fixed/designers_pic_3.png" class="h-auto w-full object-cover" alt="">
