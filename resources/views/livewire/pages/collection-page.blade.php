@@ -39,12 +39,12 @@
         dolor egestas at. Quisque sit amet venenatis erat, sit amet egestas sapien. Nunc sit amet mauris non eros
         rhoncus porttitor ac in ex. Aliquam erat volutpat. Suspendisse ac finibus dui.</p>
 
-    <div class="flex mb-10 justify-between">
+    <div class="flex mb-10 justify-between flex-wrap gap-8">
         <div class="flex gap-8">
-            <div class="rounded-full w-16 h-16 bg-green-500"></div>
-            <div class="rounded-full w-16 h-16 bg-gold-300"></div>
-            <div class="rounded-full w-16 h-16 bg-gray-500"></div>
-            <div class="rounded-full w-16 h-16 bg-black"></div>
+            <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-green-500"></div>
+            <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-gold-300"></div>
+            <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-gray-500"></div>
+            <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-black"></div>
         </div>
         <x-link-button class="text-3xl uppercase tracking-widest">Добавить в корзину</x-link-button>
     </div>
@@ -75,7 +75,7 @@
 
 
     <section class="mb-8">
-        <h1 class="mb-8 border-b-2 border-red w-fit">Все элементы</h1>
+        <h1 class="mb-8 border-b-2 border-red w-fit md:text-2xl">Все элементы</h1>
         <x-products-slider :products="$collection->product"/>
     </section>
 
