@@ -53,7 +53,7 @@
 
             <div class="flex justify-center flex-col gap-4 bg-white p-8 rounded-2xl md:w-full">
                 <input placeholder="Email" class="!rounded-xl" type="text">
-                <x-link-button class="bg-green-500 w-fit md:text-base sm:!text-sm w-full sm:!px-6 !rounded-xl">Подписаться на рассылку</x-link-button>
+                <x-link-button class="bg-green-500 w-fit justify-center text-center md:text-base sm:!text-sm w-full sm:!px-6 !rounded-xl">Подписаться на рассылку</x-link-button>
             </div>
 
             <div class="hidden md:block mt-8">
