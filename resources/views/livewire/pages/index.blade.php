@@ -21,7 +21,7 @@
                        class="absolute w-max py-7 bottom-10 left-1/2 transform translate-x-[-50%] text-4xl md:text-xl md:py-4">
             УЗНАТЬ БОЛЬШЕ
         </x-link-button>
-        <div class="w-full absolute left-1/2 hidden top-1/2 transform translate-y-[-50%]  translate-x-[-50%] md:block">
+        <div class="w-full absolute left-1/2 hidden top-1/2 transform w-2/3 translate-y-[-50%]  translate-x-[-50%] md:block">
         <img src="/fixed/circle_white.png"
              class=" animate-spin-slow" alt="">
         </div>

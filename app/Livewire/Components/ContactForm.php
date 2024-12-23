@@ -12,10 +12,15 @@ class ContactForm extends Component
     public $email;
     public $text;
 
+    public $flg_modal=null;
+    public $sent=false;
+
     public function render()
     {
         return view('livewire.components.contact-form');
     }
+
+
 
     public function send()
     {
@@ -26,6 +31,6 @@ class ContactForm extends Component
         // Посылаем Telegram уведомление нам
         Notification::route('telegram', config('cons.telegram_chat_id'))
             ->notify(new TelegramNotification($title, $text, null, null));
-        dd("OK");
+        $this->sent = true;
     }
 }

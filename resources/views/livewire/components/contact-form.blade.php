@@ -1,23 +1,33 @@
 <form wire:submit="send" x-data id="myForm" action="/submit" method="POST">
-    <h1 class="rounded-xl px-4 py-1 border border-black w-fit mb-8 md:text-xl">СВЯЖИТЕСЬ С НАМИ</h1>
+    @if(!$flg_modal)
+        <h1 class="rounded-xl px-4 py-1 border border-black w-fit mb-8 md:text-xl">СВЯЖИТЕСЬ С НАМИ</h1>
+    @endif
     <div class="bg-green-300 p-8 flex gap-8 rounded-3xl lg:flex-wrap">
-        <div class="flex flex-col gap-8 w-1/2 lg:w-full">
+        <div class="flex flex-col gap-8 w-1/2 @if($flg_modal) !w-full @endif lg:w-full">
             <div class="flex flex-col">
                 <label for="">Имя</label>
-                <input placeholder="Имя" required wire:model="name" class="text-lg py-2 px-6 placeholder:text-base" type="text">
+                <input placeholder="Имя" required wire:model="name" class="text-lg py-2 px-6 placeholder:text-base"
+                       type="text">
             </div>
 
             <div class="flex flex-col">
                 <label for="">Email</label>
-                <input placeholder="Email" class="text-lg py-2 px-6 placeholder:text-base" required wire:model="email" type="text">
+                <input placeholder="Email" class="text-lg py-2 px-6 placeholder:text-base" required wire:model="email"
+                       type="text">
             </div>
             <div class="flex-1 flex flex-col">
                 <label for="">Сообщение</label>
-                <textarea placeholder="Сообщение" required wire:model="text" class="text-lg py-2 px-6 placeholder:text-base min-h-48 h-full"></textarea>
+                <textarea placeholder="Сообщение" required wire:model="text"
+                          class="text-lg py-2 px-6 placeholder:text-base min-h-48 h-full"></textarea>
             </div>
-            <button class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-base sm:!text-xs tracking-wider text-center">
-                <span wire:loading.remove>ОТПРАВИТЬ СООБЩЕНИЕ</span>
-                <svg wire:loading aria-hidden="true" class="w-6 h-6 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+
+            <button
+                @if($sent)disabled @endif
+                class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-base sm:!text-xs tracking-wider text-center  hover:bg-green-500 transition-all ">
+                <span wire:loading.remove>@if($sent)УСПЕШНО ОТПРАВЛЕНО! @else ОТПРАВИТЬ СООБЩЕНИЕ @endif</span>
+
+                <svg wire:loading aria-hidden="true"
+                     class="w-6 h-6 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                      viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
@@ -29,7 +39,9 @@
             </button>
         </div>
 
-        <x-application-logo class="!w-1/2 lg:!w-full"/>
+        @if(!$flg_modal)
+            <x-application-logo class="!w-1/2 lg:!w-full"/>
+        @endif
 
     </div>
 </form>

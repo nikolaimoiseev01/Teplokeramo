@@ -1,4 +1,7 @@
 <footer class="w-full mt-16 py-8 bg-green-400">
+    <x-modal name="contact-modal" maxWidth="md">
+        <livewire:components.contact-form flg_modal="true"/>
+    </x-modal>
     <div class="content flex gap-8 flex-col md:gap-4">
         <div class="flex items-center mb-16 md:mb-2 justify-between">
             <x-application-logo class="w-16 md:mx-auto"/>
@@ -32,7 +35,7 @@
         <div class="flex justify-between flex-wrap gap-4 text-lg text-white md:justify-center
          md:text-center">
             <div class="flex flex-col gap-4 md:justify-center md:text-center">
-                <a href="" class="text-white w-fit rounded px-2 bg-green-500 md:m-auto">Связаться с нами</a>
+                <button href="" x-on:click="$dispatch('open-modal', 'contact-modal')" class="text-white w-fit rounded px-2 bg-green-500 md:m-auto">Связаться с нами</button>
                 <p class="">Email: info@kerama.com</p>
                 <p>+7(555)-567-8901</p>
                 <p>Адрес: г. Москва, Смоленская-<br>Сенная пл., 30-32</p>
@@ -92,5 +95,7 @@
             <p>© 2023 Positivus. All Rights Reserved.</p>
             <p>Privacy Policy</p>
         </div>
+
+
     </div>
 </footer>

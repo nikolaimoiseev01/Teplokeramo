@@ -1,5 +1,5 @@
 <main class="content flex-1">
-    <div class="w-full relative">
+    <div class="w-full relative mt-10">
 
         <h1 class="uppercase mb-10 text-5xl md:text-3xl">О НАС</h1>
 
@@ -11,7 +11,7 @@
             <a href="{{route('catalog-page')}}" wire:navigate>Каталог</a>
         </div>
 
-        <img src="/fixed/circle_text.png" class="absolute w-72 bottom-0 z-40 right-16 md:hidden" alt="">
+        <img src="/fixed/circle_text.png" class="absolute w-64 bottom-0 z-40 right-16 md:hidden" alt="">
 
     </div>
     <p class="mb-10 text-lg">
