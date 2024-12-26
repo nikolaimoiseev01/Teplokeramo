@@ -16,7 +16,7 @@
 
     <h1 class="mb-10 text-5xl md:text-3xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
     <div class="flex gap-8 mb-10 flex-wrap text-xl md:text-base ">
-        <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
+        <div class="flex px-4 justify-center items-center gap-2 text-red-200 rounded-2xl border-red-200 border">
             <x-heroicon-c-heart class="w-4 h-4"/>
             <span>В избранное</span>
         </div>
