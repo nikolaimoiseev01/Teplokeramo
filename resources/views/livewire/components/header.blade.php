@@ -15,7 +15,8 @@
                     <input class="bg-transparent !border-none" type="text">
                     <x-heroicon-o-magnifying-glass class="w-6 absolute right-2 top-1/2 transform translate-y-[-50%] "/>
                 </div>
-                <a href="">
+                <a href="{{route('basket-page')}}" class="relative" wire:navigate>
+                    <span id="basket-badge" class="aspect-square rounded-full bg-red-200 absolute -top-2 -right-2 text-white text-xs flex items-center justify-center w-5 h-5 hidden">5</span>
                     <svg width="38" height="36" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect x="0.0166016" y="0.25" width="37.6306" height="35.5" fill="url(#pattern0_33_1008)"/>
                         <defs>

@@ -6,15 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class InputText extends Component
+class RangeInput extends Component
 {
-    public $title;
+    public $product;
     /**
      * Create a new component instance.
      */
-    public function __construct($title=null)
+    public function __construct($product)
     {
-        $this->title = $title;
+        $this->product = $product;
     }
 
     /**
@@ -22,6 +22,6 @@ class InputText extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.input-text');
+        return view('components.range-input');
     }
 }

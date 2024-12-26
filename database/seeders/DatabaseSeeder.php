@@ -22,19 +22,23 @@ class DatabaseSeeder extends Seeder
     public $brands = [
             [
                 'name' => 'Arcana Ceramica',
-                'country' => 'es'
+                'country_code' => 'es',
+                'country_name' => 'Испания'
             ],
             [
                 'name' => 'Atlas Concorde',
-                'country' => 'au'
+                'country_code' => 'au',
+                'country_name' => 'Австралия'
             ],
             [
                 'name' => 'Atlas Concorde Rus',
-                'country' => 'us'
+                'country_code' => 'us',
+                'country_name' => 'США'
             ],
             [
                 'name' => 'Bisazza',
-                'country' => 'ru'
+                'country_code' => 'ru',
+                'country_name' => 'Россия'
             ]
         ];
 
@@ -85,15 +89,22 @@ class DatabaseSeeder extends Seeder
                     $result = array_filter($this->brands, function ($brand) use ($searchName) {
                         return $brand['name'] === $searchName;
                     });
-                    $country = !empty($result) ? current($result)['country'] : null;
 
                     $area = Arr::random($this->areas, rand(1, 3));
 
                     $product = Product::create([
                         'name' => "Товар $i (б {$brand['id']}, к {$collection['id']})",
                         'brand_id' => $brand['id'],
-                        'country_code' => $country,
+                        'country_code' => current($result)['country_code'],
+                        'country_name' => current($result)['country_name'],
                         'area_of_use' => $area,
+                        'price' => 420000,
+                        'packaged' => 1.44,
+                        'article' => 123456,
+                        'type' => 'Матовый',
+                        'weight' => 50,
+                        'thickness' => 8.5,
+                        'color' => '#B7C3AA',
                         'slug' => Str::slug("Товар $i (б {$brand['id']}, к {$collection['id']})"),
                         'collection_id' => $collection['id'], // Присваиваем ID коллекции
                     ]);
@@ -111,7 +122,7 @@ class DatabaseSeeder extends Seeder
         $file = new Filesystem;
         $file->cleanDirectory('storage/app/public/media');
 
-        $this->call(CountriesSeeder::class);
+//        $this->call(CountriesSeeder::class);
 
         $user = User::create([
             'name' => 'admin',

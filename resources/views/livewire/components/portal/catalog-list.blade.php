@@ -6,9 +6,9 @@
 
     <div class="flex gap-4 flex-wrap justify-between mb-8 items-center">
         <div class="text-xl flex gap-4">
-            <span class="cursor-pointer" :class="{ 'border-b-2 border-red': tab === 'collections' }"
+            <span class="cursor-pointer px-6 py-1" :class="{ 'text-white bg-green-400 rounded-xl': tab === 'collections' }"
                   @click="tab = 'collections'">{{morphos\Russian\pluralize($orig_collections->count(), 'коллекция')}}</span>
-            <span class="cursor-pointer" :class="{ 'border-b-2 border-red': tab === 'products' }"
+            <span class="cursor-pointer  px-6 py-1" :class="{ 'text-white bg-green-400 rounded-xl': tab === 'products' }"
                   @click="tab = 'products'">{{morphos\Russian\pluralize($orig_products->count(), 'товар')}}</span>
         </div>
         <x-dropdown-select

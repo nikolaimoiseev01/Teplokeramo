@@ -3,7 +3,9 @@
     <div class="swiper  productSlider">
         <div class="swiper-wrapper">
             @foreach($products as $key => $product)
-                <div class="swiper-slide">
+                <div
+                    onclick=" window.location = '{{route('product-page', $product['slug'])}}'"
+                    class="swiper-slide">
                     <x-cards.product :product="$product"/>
                 </div>
             @endforeach
@@ -40,10 +42,15 @@
         centeredSlides: true,
         centerInsufficientSlides: true,
         spaceBetween: 20,
+        preventClicks: false, // Не блокировать клики
+        // preventClicksPropagation: false, // Не блокировать всплытие кликов
+        // slideToClickedSlide: false, // Отключить автоматический переход к слайду по клику
+        // simulateTouch: true, // Включить поддержку touch-устройств
         navigation: {
             nextEl: ".next2",
             prevEl: ".prev2",
         },
+        preventClicks: false,
         breakpoints: {
             640: {
                 slidesPerView: 2,
@@ -55,5 +62,20 @@
                 centeredSlides: false
             },
         },
+        // on: {
+        //     click: function () {
+        //         console.log(this.clickedSlide)
+        //         if (this.clickedSlide) {
+        //             console.log('Clicked slide:', this.clickedSlide);
+        //             console.log('Index of clicked slide:', this.clickedIndex);
+        //
+        //             // Например, выполняем действие
+        //             const link = this.clickedSlide.querySelector('a');
+        //             if (link) {
+        //                 // window.location.href = link.href; // Переход по ссылке
+        //             }
+        //         }
+        //     },
+        // },
     });
 </script>

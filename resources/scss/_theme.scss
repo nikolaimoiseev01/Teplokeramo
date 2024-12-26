@@ -24,13 +24,16 @@ h2 {
 
 a {
     cursor: pointer;
+    &.disabled {
+        pointer-events: none;
+    }
 }
 
 .link {
     font-weight: 300;
     color: $color-black;
     width: fit-content;
-    border-bottom: 1px $color-black solid;
+    //border-bottom: 1px $color-black solid;
     position: relative;
 }
 
@@ -41,4 +44,16 @@ input, textarea {
         outline: none !important;
         box-shadow: none !important;
     }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }

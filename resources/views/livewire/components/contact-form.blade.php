@@ -21,6 +21,11 @@
                           class="text-lg py-2 px-6 placeholder:text-base min-h-48 h-full"></textarea>
             </div>
 
+            <div class="flex gap-4 items-center">
+                <input required type="checkbox" id="police" name="police">
+                <label for="police">Я даю согласие на обработку персональных данных</label><br>
+            </div>
+
             <button
                 @if($sent)disabled @endif
                 class="px-12 py-3 bg-dark text-white rounded-full text-3xl md:text-base sm:!text-xs tracking-wider text-center  hover:bg-green-500 transition-all ">

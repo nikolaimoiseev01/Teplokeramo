@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Pages\AboutPage as AboutPageAlias;
+use App\Livewire\Pages\BasketPage as BasketPageAlias;
+use App\Livewire\Pages\BasketSuccessPage as BasketSuccessPageAlias;
 use App\Livewire\Pages\BrandPage;
 use App\Livewire\Pages\BrandsPage as BrandsAlias;
 use App\Livewire\Pages\CatalogPage as CatalogPageAlias;
@@ -26,6 +28,8 @@ Route::get('/', IndexAlias::class);
 Route::get('/about', AboutPageAlias::class)->name('about-page');
 Route::get('/to-partners', ToPartnersPageAlias::class)->name('to-partners-page');
 Route::get('/to-designers', ToDesignersPageAlias::class)->name('to-designers-page');
+Route::get('/basket', BasketPageAlias::class)->name('basket-page');
+Route::get('/basket/success', BasketSuccessPageAlias::class)->name('basket-success-page');
 Route::get('/catalog', CatalogPageAlias::class)->name('catalog-page');
 Route::get('/brands', BrandsAlias::class)->name('brands-page');
 Route::get('/brand/{slug}', BrandPage::class)->name('brand-page');

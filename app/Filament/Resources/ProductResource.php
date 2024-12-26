@@ -41,8 +41,8 @@ class ProductResource extends Resource
                                             ->columnSpanFull()
                                             ->maxLength(255),
                                         Forms\Components\TextInput::make('slug')
-                                            ->columnSpanFull()
                                             ->required()
+                                            ->columnSpanFull()
                                             ->maxLength(255),
 
                                     ])->columnSpan(1),
@@ -60,6 +60,10 @@ class ProductResource extends Resource
                                         ->columnSpan(1),
                                 ])->columns(2),
                                 Forms\Components\Grid::make()->schema([
+                                    Forms\Components\TextInput::make('price')
+                                        ->label('Цена за м2 (копеек)')
+                                        ->numeric()
+                                        ->required(),
                                     Forms\Components\Select::make('brand_id')
                                         ->relationship('brand', 'name')
                                         ->label('Бренд')
@@ -68,17 +72,43 @@ class ProductResource extends Resource
                                         ->relationship('collection', 'name')
                                         ->label('Коллекция')
                                         ->required(),
-                                ])->columns(2)
+                                ])->columns(3)
 
                             ]),
                         Tabs\Tab::make('Подробная информация')
                             ->schema([
                                 Forms\Components\Textarea::make('desc')
+                                    ->label('Описание')
                                     ->maxLength(255),
+                                Forms\Components\Grid::make()->schema([
+                                    Forms\Components\TextInput::make('packaged')
+                                        ->numeric()
+                                        ->label('М2 в коробке'),
+                                    Forms\Components\TextInput::make('weight')
+                                        ->numeric()
+                                        ->label('Вес (кг)'),
+                                    Forms\Components\ColorPicker::make('color')
+                                        ->label('Цвет'),
+                                ])->columns(3),
+                                Forms\Components\Grid::make()->schema([
+                                    Forms\Components\TextInput::make('article')
+                                        ->numeric()
+                                        ->label('Артикул')
+                                        ->maxLength(255),
+                                    Forms\Components\TextInput::make('type')
+                                        ->label('Тип')
+                                        ->maxLength(255),
+                                    Forms\Components\TextInput::make('thickness')
+                                        ->numeric()
+                                        ->label('Толщина')
+                                        ->maxLength(255),
+
+                                ])->columns(3),
                                 Forms\Components\Section::make('Применение')->schema([
                                     Repeater::make('area_of_use')
                                         ->label('')
-                                         ->addActionLabel('Добавить свойство')
+                                        ->grid(2)
+                                        ->addActionLabel('Добавить свойство')
                                         ->simple(
                                             TextInput::make('area_of_use')
                                                 ->label('')
@@ -86,21 +116,6 @@ class ProductResource extends Resource
                                         )
                                 ])
 
-                            ]),
-                        Tabs\Tab::make('Примеры')
-                            ->schema([
-                                Forms\Components\SpatieMediaLibraryFileUpload::make('examples')
-                                    ->collection('examples')
-                                    ->image()
-                                    ->multiple()
-                                    ->reorderable()
-                                    ->label('')
-                                    ->imageEditor()
-                                    ->panelLayout('grid')
-                                    ->imageEditorMode(2)
-                                    ->imageResizeMode('cover')
-                                    ->imageCropAspectRatio('460:280')
-                                    ->columnSpan(1),
                             ])
                     ])->columnSpanFull()
 

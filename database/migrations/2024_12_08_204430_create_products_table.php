@@ -16,7 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('brand_id')->nullable();
             $table->foreignId('collection_id');
+            $table->float('price');
+            $table->float('packaged');
+            $table->integer('article');
+            $table->string('type');
+            $table->float('weight');
+            $table->float('thickness');
+            $table->string('color');
             $table->string('country_code');
+            $table->string('country_name');
             $table->string('slug');
             $table->json('area_of_use')->nullable();
             $table->string('style')->nullable();

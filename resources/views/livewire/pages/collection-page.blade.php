@@ -1,4 +1,7 @@
 <main class="content flex-1">
+    @if(Auth::check())
+        <a href="/admin/collections/{{$collection['id']}}/edit"  target="_blank" class="link mb-8 block">Коллекция в Админке</a>
+    @endif
     <div class="flex gap-6 flex-wrap mb-10 text-xl md:text-base">
         <a href="/" wire:navigate>Главная</a>
         <x-heroicon-s-chevron-right class="w-6"/>
@@ -12,9 +15,6 @@
     </div>
 
     <h1 class="mb-10 text-5xl md:text-3xl">{{$collection->brand['name']}} | {{$collection['name']}}</h1>
-    @if(Auth::check())
-        <a href="/admin/collections/{{$collection['id']}}/edit"  target="_blank" class="link mb-8 block">Коллекция в Админке</a>
-    @endif
     <div class="flex gap-8 mb-10 flex-wrap text-xl md:text-base ">
         <div class="flex px-4 justify-center items-center gap-2 text-red rounded-2xl border-red border">
             <x-heroicon-c-heart class="w-4 h-4"/>
@@ -46,10 +46,9 @@
             <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-gray-500"></div>
             <div class="rounded-full w-16 h-16 md:w-10 md:h-10 bg-black"></div>
         </div>
-        <x-link-button class="text-3xl uppercase tracking-widest">Добавить в корзину</x-link-button>
     </div>
 
-    <section class="flex flex-col mb-8" x-data="{ open: false }">
+    <section class="flex flex-col mb-8" x-data="{ open: true }">
         <div @click="open = !open" class="flex gap-2 items-center text-green-700 cursor-pointer">
             <p class="border-b text-lg border-green-700">Технические характеристики</p>
             <x-heroicon-o-chevron-down x-show="!open" class="w-6"/>
@@ -57,7 +56,7 @@
         </div>
         <div x-show="open" class="mt-4 flex flex-col gap-2">
             <p><b class="text-xl">Производетель: </b>{{$collection->brand['name']}}</p>
-            <p><b class="text-xl">Страна: </b>{{$collection->product[0]->country['name']}}</p>
+            <p><b class="text-xl">Страна: </b>{{$collection->product[0]['country_name']}}</p>
             <p><b class="text-xl">Размеры, см: </b>тест</p>
             <p><b class="text-xl">Толщина, см: </b>тест</p>
             <p><b class="text-xl">Тип плитки: </b>тест</p>
@@ -75,7 +74,7 @@
 
 
     <section class="mb-8">
-        <h1 class="mb-8 border-b-2 border-red w-fit md:text-2xl">Все элементы</h1>
+        <h1 class="mb-8 border-b-2 border-red w-fit md:text-2xl">Товары в коллекции</h1>
         <x-products-slider :products="$collection->product"/>
     </section>
 

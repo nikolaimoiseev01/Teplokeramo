@@ -16,7 +16,13 @@ class Product extends Model implements HasMedia
     protected $fillable = [
         'name',
         'brand_id',
-        'style',
+        'price',
+        'packaged',
+        'article',
+        'type',
+        'weight',
+        'thickness',
+        'color',
         'country_code',
         'area_of_use',
         'slug'
@@ -36,9 +42,5 @@ class Product extends Model implements HasMedia
         return $this->belongsTo(Brand::class);
     }
 
-    public function country(): BelongsTo
-    {
-        return $this->belongsTo(Country::class, 'country_code', 'code');
-    }
 
 }

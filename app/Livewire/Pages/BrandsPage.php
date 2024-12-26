@@ -11,6 +11,7 @@ class BrandsPage extends Component
 {
     public $brands;
     public $sort_options;
+    public $sort_option;
     public $country_filter = '999';
     public $countries;
 
@@ -21,8 +22,15 @@ class BrandsPage extends Component
 
     public function mount() {
         $this->brands = Brand::all();
-        $countries_ids = Product::distinct()->pluck('country_code');
-        $this->countries = Country::whereIn('code', $countries_ids->toArray())->get();
+        $this->countries = Product::select('country_code', 'country_name')->distinct()->get();
+        $this->countries = $this->countries->map(function ($item, $index) {
+            return [
+                'id' => $index + 1, // Добавляем порядковый номер
+                'country_code' => $item->country_code, // Оставляем код страны
+                'name' => $item->country_name, // Переименовываем поле country_name в name
+            ];
+        });
+//        dd( $this->countries );
 
         $this->sort_options = [
             [
@@ -38,14 +46,13 @@ class BrandsPage extends Component
     }
 
     public function updatedCountryFilter() {
-//        dd($this->country_filter);
         if ($this->country_filter == '999') {
             $this->brands = Brand::all();
         } else {
+            $country = $this->countries->firstWhere('id', $this->country_filter);
             // Получаем бренды продуктов, у которых country_code совпадает
-            $country_code = Country::where('id', $this->country_filter)->first();
-            $this->brands = Brand::whereHas('product', function ($query) use($country_code) {
-                $query->where('country_code', $country_code['code']);
+            $this->brands = Brand::whereHas('product', function ($query) use($country) {
+                $query->where('country_code', $country['country_code']);
             })->distinct()->get();
         }
     }

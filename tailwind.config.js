@@ -40,8 +40,15 @@ export default {
                     500: '#9BAA8C',
                     700: '#7CAC56'
                 },
-                red: '#BE1114',
-                brown: '#864D36'
+                red: {
+                    200: '#E83E33',
+                    400: '#BE1114'
+                },
+                brown: '#864D36',
+                gray: {
+                    200: '#c6c6c6',
+                    400: '#767676'
+                }
             },
             screens: {
                 '2xl': {'max': '1535px'}, // => @media (max-width: 1535px) { ... }
