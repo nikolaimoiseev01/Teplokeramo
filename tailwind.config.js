@@ -13,7 +13,7 @@ export default {
         extend: {
 
             fontFamily: {
-                sans: ['Random Grotesque Standard', ...defaultTheme.fontFamily.sans],
+                sans: ['Random Grotesque Spacious Book', ...defaultTheme.fontFamily.sans],
             },
             spacing: {
                 '116': '29rem', // 464px
