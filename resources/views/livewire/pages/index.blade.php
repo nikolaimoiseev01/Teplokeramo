@@ -35,16 +35,19 @@
     <section class="content grid grid-rows-2 grid-flow-col gap-4 my-16 text-4xl font-semibold text-white md:flex md:flex-col md:text-3xl">
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}"
            style="background-image: url('/fixed/dlja_vannoi_background.png');"
+           wire:navigate
            class="bg-cover row-span-1 h-96 relative">
             <span class=" absolute bottom-8 left-8">ДЛЯ<br>ВАННОЙ</span>
         </a>
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"
            style="background-image: url('/fixed/dlja_kuhni_background.png');"
+           wire:navigate
            class="bg-contain col-span-1 h-96 bg-gold relative">
             <span class="absolute top-8 left-8">ДЛЯ<br>КУХНИ</span>
         </a>
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"
            style="background-image: url('/fixed/dlja_vannoi_background_2.png');"
+           wire:navigate
            class="bg-cover row-span-2 col-span-2 relative md:h-96">
         </a>
     </section>
@@ -73,22 +76,26 @@
         class="content flex gap-4 my-16 flex-wrap md:flex md:flex-col uppercase text-4xl md:text-3xl leading-8 font-semibold text-white">
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}"
            style="background-image: url('/fixed/santechnika.png');"
+           wire:navigate
            class="sant-block bg-cover flex-1 relative md:h-116 md:flex-initial">
             <span class=" absolute top-8 left-8">Сантехника</span>
         </a>
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"
            style="background-image: url('/fixed/santechnika_2.png');"
+           wire:navigate
            class="bg-cover flex-1 bg-gold relative md:h-116 md:flex-initial">
             <span class=" absolute bottom-8 left-8">Готовые<br>решения</span>
         </a>
         <div class="flex flex-col gap-4">
             <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"
                style="background-image: url('/fixed/sop_tovari.png');"
+               wire:navigate
                class="bg-cover h-116 w-116 block relative md:flex-initial md:w-full">
                 <span class="text-white absolute bottom-8 left-8">Сопутствующие<br>товары</span>
             </a>
             <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для кухни']) }}"
                style="background-image: url('/fixed/zelenaja_plitka.png');"
+               wire:navigate
                class="bg-cover block h-116 w-116 relative md:flex-initial md:w-full">
             </a>
         </div>
