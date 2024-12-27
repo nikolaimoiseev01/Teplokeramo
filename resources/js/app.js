@@ -1,6 +1,7 @@
 import './bootstrap';
 import $ from 'jquery'
 import 'jquery-mask-plugin'
+
 window.$ = $;
 window.jQuery = $;
 
@@ -34,83 +35,40 @@ function deleteCookie(name) {
     document.cookie = name + "=; Max-Age=-99999999;";
 }
 
-function updateBasketCount() {
-    let data = getCookie('basket-products');
-    data = data ? JSON.parse(data) : [];
-    let products_cnt = Object.keys(data).length
-    if (products_cnt > 0) {
-        $('#basket-badge').removeClass('hidden');
-        $('#basket-badge').text(products_cnt);
-    } else {
-        $('#basket-badge').addClass('hidden');
+document.addEventListener('DOMContentLoaded', function () {
+    window.updateBasketCount = function () {
+        let data = getCookie('basket-products');
+        data = data ? JSON.parse(data) : [];
+        let products_cnt = Object.keys(data).length
+        if (products_cnt > 0) {
+            $('#basket-badge').removeClass('hidden');
+            $('#basket-badge').text(products_cnt);
+        } else {
+            $('#basket-badge').addClass('hidden');
+        }
     }
-}
-updateBasketCount()
+})
 
 // Объявляем функцию снаружи, чтобы она была доступна глобально
-function updateBasketButtons() {
-    let data = getCookie('basket-products');
-    data = data ? JSON.parse(data) : [];
-    $.each(data, function(index, item) {
-        let button = $(`#big-basket-button-${item.id}`);
-        button.text('В корзине');
-        button.addClass('disabled');
-    });
-}
-
-// Запускаем функцию сразу
-updateBasketButtons();
+document.addEventListener('DOMContentLoaded', function () {
+    window.updateBasketButtons = function () {
+        let data = getCookie('basket-products');
+        data = data ? JSON.parse(data) : [];
+        $.each(data, function (index, item) {
+            let button = $(`#big-basket-button-${item.id}`);
+            button.text('В корзине');
+            button.addClass('disabled');
+        });
+    }
+})
 
 // Добавляем обработчик на событие
-document.addEventListener('afterBasketUpdate', function() {
+document.addEventListener('afterBasketUpdate', function () {
     updateBasketButtons()
     updateBasketCount()
 });
 
 
-//
-// // Добавление ID в куки
-// document.addEventListener('DOMContentLoaded', function () {
-//     window.addIdToCookie = function (cookieName, id) {
-//         let data = getCookie(cookieName);
-//         // Преобразуем строку куки в массив, если кука существует
-//         data = data ? JSON.parse(data) : {};
-//         const val = $(`#big-basket-button-${id}`).parent().children('.number-wrap').find('input').val();
-//
-//         // Проверяем, есть ли ID в массиве
-//         if (!data.includes(id)) {
-//             data.push(id); // Добавляем ID в массив
-//             setCookie(cookieName, JSON.stringify(data), 7); // Сохраняем массив в виде строки
-//             console.log(`ID ${id} добавлен в куки`);
-//             updateBasketCount()
-//             updateBasketButtons()
-//         } else {
-//             console.log(`ID ${id} уже существует в куки`);
-//         }
-//     };
-// });
-//
-// // Удаление ID из куки
-// document.addEventListener('DOMContentLoaded', function () {
-//     window.removeIdFromCookie = function (cookieName, id) {
-//         let data = getCookie(cookieName);
-//
-//         if (data) {
-//             data = JSON.parse(data); // Преобразуем строку в массив
-//
-//             // Убираем указанный ID
-//             data = data.filter(item => item !== id);
-//
-//             // Сохраняем обновленный список
-//             setCookie(cookieName, JSON.stringify(data), 7);
-//             console.log(`ID ${id} удалён из куки`);
-//             updateBasketCount()
-//             updateBasketButtons()
-//         } else {
-//             console.log(`Кука ${cookieName} не существует или пуста`);
-//         }
-//     };
-// })
 
 
 $(document).ready(function () {
