@@ -6,27 +6,26 @@ use App\Notifications\TelegramNotification;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 
-class ContactForm extends Component
+class ProductFeedbackForm extends Component
 {
+    public $sent;
     public $name;
+    public $product;
     public $tel;
-    public $text;
-
-    public $flg_modal=null;
-    public $sent=false;
+    public $question_type='Задать вопрос';
 
     public function render()
     {
-        return view('livewire.components.contact-form');
+        return view('livewire.components.product-feedback-form');
     }
 
+    public function mount($product) {
+        $this->product = $product;
+    }
 
-
-    public function send()
-    {
-
-        $title = 'Новая заявка на консультацию!';
-        $text = "*Имя:* {$this->name} \n*Телефон:* {$this->tel} \n*Сообщение:* {$this->text}";
+    public function sendProductForm() {
+        $title = 'Новая заявка со страниы товара!';
+        $text = "*Имя:* {$this->name} \n*Телефон:* {$this->tel} \n*Тип вопроса:* {$this->question_type}\n*С товара:* {$this->product['name']}";
 
         // Посылаем Telegram уведомление нам
         Notification::route('telegram', config('cons.telegram_chat_id'))

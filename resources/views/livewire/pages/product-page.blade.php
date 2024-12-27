@@ -17,7 +17,8 @@
         <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 object-cover md:min-w-px" alt="">
         <div class="flex gap-8 flex-col">
             <div class="flex flex-col gap-4">
-                <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}} (ID: {{$product['id']}})</h1>
+                <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}}
+                    (ID: {{$product['id']}})</h1>
                 <div class="flex gap-2 text-xl md:text-base">
                     <x-icon name="flag-country-{{$product['country_code']}}" class="w-4"/>
                     <p>{{$product['country_name']}}</p>
@@ -64,7 +65,7 @@
                 <div class="flex gap-8 justify-between items-center md:flex-col">
                     <x-range-input :product="$product"></x-range-input>
                     <x-link-button wire:ignore id="big-basket-button-{{$product['id']}}"
-{{--                                   onclick="addIdToCookie('basket-products', {{$product['id']}})"--}}
+                                   {{--                                   onclick="addIdToCookie('basket-products', {{$product['id']}})"--}}
                                    wire:click="addIdToCookie()"
                                    class=" w-full">В корзину
                     </x-link-button>
@@ -126,14 +127,8 @@
         </div>
     </section>
 
-    <section class="flex gap-32 text-green-700 mb-10  flex-wrap md:flex-col md:gap-8">
-        <p x-on:click="$dispatch('open-modal', 'contact-modal')"
-           class="cursor-pointer border-b text-lg border-green-700 w-fit">Заказать доставку образцов</p>
-        <p x-on:click="$dispatch('open-modal', 'contact-modal')"
-           class="cursor-pointer border-b text-lg border-green-700 w-fit">Заказать подбор рисунка</p>
-        <p x-on:click="$dispatch('open-modal', 'contact-modal')"
-           class="cursor-pointer border-b text-lg border-green-700 w-fit">Скачать PDF с инструкцией</p>
-    </section>
+    <livewire:components.product-feedback-form :product="$product"/>
+
 
     <div class="content h-20 w-full z-10 relative">
         <img src="/fixed/circle_text.png" class="absolute top-4 z-40 left-1/2 transform translate-x-[-50%]  md:hidden"

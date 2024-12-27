@@ -53,7 +53,7 @@
 
                 <div class="flex flex-col gap-4 w-1/2 md:w-full">
                     <x-input-textarea placeholder="Адрес доставки" wire:model="address"></x-input-textarea>
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <input type="radio" wire:model="payment_type" name="payment_type" value="Наличные"
                                id="Наличные">
                         <label for="Наличные">Наличные</label>

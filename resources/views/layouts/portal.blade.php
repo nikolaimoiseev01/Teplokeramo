@@ -20,10 +20,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/scss/portal.scss', 'resources/js/app.js'])
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="/js/plugins/sweetalert2/sweetalert2.min.css">
 </head>
 <body class="flex flex-col min-h-screen">
 <livewire:components.header/>

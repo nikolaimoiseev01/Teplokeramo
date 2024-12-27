@@ -4,17 +4,8 @@
     @endif
     <div class="bg-green-300 p-8 flex gap-8 rounded-3xl lg:flex-wrap">
         <div class="flex flex-col gap-8 w-1/2 @if($flg_modal) !w-full @endif lg:w-full">
-            <div class="flex flex-col">
-                <label for="">Имя</label>
-                <input placeholder="Имя" required wire:model="name" class="text-lg py-2 px-6 placeholder:text-base"
-                       type="text">
-            </div>
-
-            <div class="flex flex-col">
-                <label for="">Email</label>
-                <input placeholder="Email" class="text-lg py-2 px-6 placeholder:text-base" required wire:model="email"
-                       type="text">
-            </div>
+            <x-input-text wire:model="name" placeholder="Имя" required title="Имя"/>
+            <x-input-text wire:model="tel" placeholder="8 (911) 123-45-67" required class="mobile_input" title="Телефон"/>
             <div class="flex-1 flex flex-col">
                 <label for="">Сообщение</label>
                 <textarea placeholder="Сообщение" required wire:model="text"

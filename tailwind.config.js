@@ -46,6 +46,7 @@ export default {
                 },
                 brown: '#864D36',
                 gray: {
+                    100: '#EFEFEF',
                     200: '#c6c6c6',
                     400: '#767676'
                 }
