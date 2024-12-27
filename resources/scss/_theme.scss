@@ -57,3 +57,13 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+input[type="radio"]:checked, input[type="checkbox"]:checked {
+    background-color: #8EA279 !important;;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: 22px;
+    height: 22px
+}
+
