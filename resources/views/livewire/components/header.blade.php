@@ -34,9 +34,36 @@
                     </svg>
 
                 </a>
-                <a href="">
-                    <x-heroicon-o-bars-3 class="w-10"/>
-                </a>
+                <div x-data="{ open: false }" class="relative hidden lg:block">
+                    <!-- Кнопка-бургер -->
+                    <button @click="open = true" class="block">
+                        <x-heroicon-o-bars-3 class="w-10 h-10 text-gray-800" />
+                    </button>
+
+                    <!-- Выезжающее меню -->
+                    <div
+                        x-show="open"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="translate-x-full"
+                        x-transition:enter-end="translate-x-0"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="translate-x-0"
+                        x-transition:leave-end="translate-x-full"
+                        class="fixed inset-0 bg-white z-50 flex flex-col p-6"
+                    >
+                        <!-- Кнопка закрытия -->
+                        <button @click="open = false" class="self-end">
+                            <x-heroicon-o-x-mark class="w-10 h-10 text-gray-800" />
+                        </button>
+
+                        <!-- Меню -->
+                        <nav class="flex flex-col items-center justify-center flex-grow space-y-6">
+                            <a href="{{route('catalog-page')}}" wire:navigate class="link text-xl">Каталог</a>
+                            <a href="" class="link text-xl">Готовые решения</a>
+                            <a href="{{route('brands-page')}}" wire:navigate class="link text-xl">Бренды</a>
+                        </nav>
+                    </div>
+                </div>
 
             </div>
         </div>

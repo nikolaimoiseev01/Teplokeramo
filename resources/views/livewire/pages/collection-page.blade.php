@@ -58,17 +58,10 @@
             <p><b class="text-xl">Производетель: </b>{{$collection->brand['name']}}</p>
             <p><b class="text-xl">Страна: </b>{{$collection->product[0]['country_name']}}</p>
             <p><b class="text-xl">Размеры, см: </b>тест</p>
-            <p><b class="text-xl">Толщина, см: </b>тест</p>
-            <p><b class="text-xl">Тип плитки: </b>тест</p>
-            <p><b class="text-xl">Применение: </b>тест</p>
-            <p><b class="text-xl">Материал: </b>тест</p>
-            <p><b class="text-xl">Калибр: </b>тест</p>
-            <p><b class="text-xl">Поверхность: </b>тест</p>
-            <p><b class="text-xl">Фактура: </b>тест</p>
-            <p><b class="text-xl">Стиль: </b>тест</p>
-            <p><b class="text-xl">Форма: </b>тест</p>
-            <p><b class="text-xl">Тип элемента: </b>тест</p>
-            <p><b class="text-xl">Категория: </b>тест</p>
+            <p><b class="text-xl">Толщина, см: </b>{{$product_thickness}}</p>
+            <p><b class="text-xl">Тип плитки: </b>{{$product_types}}</p>
+            <p><b class="text-xl">Цвет плитки: </b>{{$product_colors}}</p>
+
         </div>
     </section>
 
