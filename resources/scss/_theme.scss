@@ -67,3 +67,20 @@ input[type="radio"], input[type="checkbox"] {
     height: 22px
 }
 
+
+/* Линия загрузки */
+#nprogress .bar {
+    background: #4CAF50; /* Изменить цвет линии */
+    height: 4px; /* Толщина линии */
+}
+
+/* Круговой индикатор (если используется) */
+#nprogress .spinner-icon {
+    border-top-color: #4CAF50; /* Цвет верхней линии круга */
+    border-left-color: #4CAF50; /* Цвет левой линии круга */
+}
+
+/* Фон линии загрузки */
+#nprogress .peg {
+    box-shadow: 0 0 10px #4CAF50, 0 0 5px #4CAF50; /* Свечение */
+}

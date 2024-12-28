@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary: red;
+}
+
 
 @font-face {
     font-family: 'Random Grotesque Standard';

@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Exports\ProductExporter;
+use App\Filament\Imports\ProductImporter;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
@@ -12,6 +14,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ExportAction;
+use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -77,9 +81,6 @@ class ProductResource extends Resource
                             ]),
                         Tabs\Tab::make('Подробная информация')
                             ->schema([
-                                Forms\Components\Textarea::make('desc')
-                                    ->label('Описание')
-                                    ->maxLength(255),
                                 Forms\Components\Grid::make()->schema([
                                     Forms\Components\TextInput::make('packaged')
                                         ->numeric()
@@ -126,6 +127,10 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->label('Название')
                     ->searchable(),
@@ -137,6 +142,9 @@ class ProductResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('country_code')
                     ->label('Страна')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('price')
+                    ->label('Цена (м2)')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -153,10 +161,20 @@ class ProductResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
+            ->headerActions([
+                ImportAction::make()
+                    ->label('Загрузить товары CSV')
+                    ->modalDescription(null)
+                    ->importer(ProductImporter::class),
+                ExportAction::make()
+                    ->label('Выгрузить товары')
+                    ->tooltip('Будут скачаны отфильтрованные товары')
+                    ->exporter(ProductExporter::class)
+            ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                ])
             ]);
     }
 
