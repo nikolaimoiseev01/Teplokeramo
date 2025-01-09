@@ -47,7 +47,7 @@
             <div class="flex gap-4 w-full md:flex-col">
                 <div class="flex flex-col gap-4 w-1/2 md:w-full">
                     <x-input-text wire:model="name" class="w-full" required placeholder="Имя"></x-input-text>
-                    <x-input-text wire:model="tel" required placeholder="Телефон"></x-input-text>
+                    <x-input-text wire:model="tel" class="mobile_input" required placeholder="8 (911) 123-45-67"></x-input-text>
                     <x-input-text wire:model="email" required placeholder="Email"></x-input-text>
                 </div>
 

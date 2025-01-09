@@ -27,7 +27,8 @@ class BasketPage extends Component
         return view('livewire.pages.basket-page');
     }
 
-    public function updateCookie($val) {
+    public function updateCookie($val)
+    {
         Cookie::queue(
             Cookie::make(
                 'basket-products',          // Имя куки
@@ -79,7 +80,7 @@ class BasketPage extends Component
     {
         $product_names = '';
         foreach ($this->products as $product) {
-            $boxes =  $product['amount_cookie'] / $product['packaged'];
+            $boxes = $product['amount_cookie'] / $product['packaged'];
             $product_names .= "{$product['name']} (коробок: $boxes по {$product['packaged']}м2), ";
         }
         $product_names = rtrim($product_names, ", ");
@@ -108,11 +109,11 @@ class BasketPage extends Component
         foreach ($this->products as &$product) {
             if (($product['packaged'] <> $product['amount_cookie'] && $dir == -1) || $dir == 1) {
                 if ($product['id'] == $id) {
-//                dd($product);
                     if ($dir == 1) {
-                        $product['amount_cookie'] = $product['amount_cookie'] + $product['packaged'];
+                        $product['amount_cookie'] = round($product['amount_cookie'] + $product['packaged'], 2);
+
                     } else {
-                        $product['amount_cookie'] = $product['amount_cookie'] - $product['packaged'];
+                        $product['amount_cookie'] = round($product['amount_cookie'] - $product['packaged'], 2);
                     }
                     $product['price_cookie'] = $product['amount_cookie'] * $product['price'];
                     break; // Прерываем цикл, если нашли нужный элемент
