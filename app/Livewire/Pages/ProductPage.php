@@ -59,7 +59,8 @@ class ProductPage extends Component
 
     public function updateAmount($id, $dir)
     {
-        $this->amount = max($this->product['packaged'], $this->amount + ($dir * $this->product['packaged']));
+        $this->amount = round(max($this->product['packaged'], $this->amount + ($dir * $this->product['packaged'])), 1);
+//        dd($this->amount);
         $this->total_price = $this->product['price'] * $this->amount;
 
     }

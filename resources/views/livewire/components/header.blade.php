@@ -13,7 +13,7 @@
                     <a href="" class="link text-xl">Готовые решения</a>
                     <a href="{{route('brands-page')}}" wire:navigate class="link text-xl">Бренды</a>
                 </div>
-                <div class="border rounded-xl px-4 flex justify-center bg-gold-200 h-9 w-64 gap-4 md:hidden relative">
+                <div class="rounded-xl px-4 flex justify-center bg-gold-200 h-9 w-64 gap-4 md:hidden relative">
                     <input class="bg-transparent !border-none" type="text">
                     <x-heroicon-o-magnifying-glass class="w-6 absolute right-2 top-1/2 transform translate-y-[-50%] "/>
                 </div>

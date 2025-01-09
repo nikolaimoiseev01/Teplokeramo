@@ -52,7 +52,7 @@
             </div>
             <div class="flex flex-col gap-4 md:w-full">
                 <a>Оферта</a>
-                <a>Политика <br> конфидициальности</a>
+                <a href="{{route('personal-data-page')}}" wire:navigate>Политика <br> конфидициальности</a>
             </div>
 
 

@@ -1,6 +1,7 @@
 <div class="flex flex-col gap-1 group w-full">
     @if(strlen($title) > 0)
         <label class="text-md" for="">{{$title}}</label>
+    
     @endif
     <div class="relative">
         <input

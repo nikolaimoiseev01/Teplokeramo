@@ -33,7 +33,7 @@
     </div>
 
     <div class="w-full flex">
-        <x-link-button class="text-4xl mx-auto">СВЯЗАТЬСЯ С НАМИ
+        <x-link-button x-on:click="$dispatch('open-modal', 'contact-modal')" class="text-4xl mx-auto">СВЯЗАТЬСЯ С НАМИ
         </x-link-button>
     </div>
 
