@@ -99,6 +99,7 @@ class DatabaseSeeder extends Seeder
                         'country_name' => current($result)['country_name'],
                         'area_of_use' => $area,
                         'price' => 420000,
+                        'old_price' => 560000,
                         'packaged' => 1.44,
                         'article' => 123456,
                         'type' => 'Матовый',

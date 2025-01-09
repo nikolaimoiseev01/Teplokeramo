@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('brand_id')->nullable();
             $table->foreignId('collection_id')->nullable();
             $table->float('price')->nullable();
+            $table->float('old_price')->nullable();
             $table->float('packaged')->nullable();
             $table->integer('article')->nullable();
             $table->string('type')->nullable();

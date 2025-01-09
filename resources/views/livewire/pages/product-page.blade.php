@@ -27,7 +27,9 @@
             <div class="flex gap-8 md:flex-col">
                 <div class="flex flex-col gap-4">
                     <h1 class="text-green-500 text-5xl font-bold">{{$product['price'] / 100}}р за м2</h1>
-                    <h1 class="text-4xl line-through text-gray-200">15 000р</h1>
+                    @if($product['old_price'])
+                        <h1 class="text-4xl line-through text-gray-200">{{$product['old_price'] / 100}}р</h1>
+                    @endif
                 </div>
                 <div class="flex gap-4 flex-col flex-1">
                     <p class="text-green-700 text-xl font-bold flex gap-2">

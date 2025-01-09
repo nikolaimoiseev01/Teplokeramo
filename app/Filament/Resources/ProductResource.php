@@ -48,7 +48,13 @@ class ProductResource extends Resource
                                             ->required()
                                             ->columnSpanFull()
                                             ->maxLength(255),
-
+                                        Forms\Components\TextInput::make('price')
+                                            ->label('Цена за м2 (копеек)')
+                                            ->numeric()
+                                            ->required(),
+                                        Forms\Components\TextInput::make('old_price')
+                                            ->label('Старая цена')
+                                            ->numeric(),
                                     ])->columnSpan(1),
                                     Forms\Components\SpatieMediaLibraryFileUpload::make('cover')
                                         ->collection('cover')
@@ -64,10 +70,6 @@ class ProductResource extends Resource
                                         ->columnSpan(1),
                                 ])->columns(2),
                                 Forms\Components\Grid::make()->schema([
-                                    Forms\Components\TextInput::make('price')
-                                        ->label('Цена за м2 (копеек)')
-                                        ->numeric()
-                                        ->required(),
                                     Forms\Components\Select::make('brand_id')
                                         ->relationship('brand', 'name')
                                         ->label('Бренд')
@@ -101,8 +103,7 @@ class ProductResource extends Resource
                                         ->maxLength(255),
                                     Forms\Components\TextInput::make('thickness')
                                         ->numeric()
-                                        ->label('Толщина')
-                                        ->maxLength(255),
+                                        ->label('Толщина'),
 
                                 ])->columns(3),
                                 Forms\Components\Section::make('Применение')->schema([
