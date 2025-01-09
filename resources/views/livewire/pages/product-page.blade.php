@@ -17,8 +17,7 @@
         <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 object-cover md:min-w-px" alt="">
         <div class="flex gap-8 flex-col">
             <div class="flex flex-col gap-4">
-                <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}}
-                    (ID: {{$product['id']}})</h1>
+                <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}}</h1>
                 <div class="flex gap-2 text-xl md:text-base">
                     <x-icon name="flag-country-{{$product['country_code']}}" class="w-4"/>
                     <p>{{$product['country_name']}}</p>
