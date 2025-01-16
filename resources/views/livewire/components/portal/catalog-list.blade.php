@@ -22,7 +22,7 @@
 
 
         <div x-show="tab == 'collections'"> {{-- Коллекции --}}
-        <div class="flex gap-8 flex-wrap justify-between mb-6 md:justify-center">
+        <div class="grid grid-cols-[repeat(3,_270px)] justify-between gap-8 mb-6 xl:flex xl:flex-wrap">
             @foreach($collections as $collection)
                 <x-cards.collection :collection="$collection"/>
             @endforeach
@@ -36,7 +36,7 @@
     </div>
 
     <div x-show="tab == 'products'"> {{-- Товары --}}
-        <div class="flex gap-8 flex-wrap justify-between mb-6 md:justify-center">
+        <div class="grid grid-cols-[repeat(3,_270px)] justify-between gap-8 mb-6 xl:flex xl:flex-wrap">
             @foreach($products as $key => $product)
                 <x-cards.product :product="$product"/>
             @endforeach

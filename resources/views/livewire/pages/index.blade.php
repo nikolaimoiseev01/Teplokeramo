@@ -34,6 +34,7 @@
 
     <section class="content grid grid-rows-2 grid-flow-col gap-4 my-16 text-4xl font-semibold text-white md:flex md:flex-col md:text-3xl">
         <a href="{{ route('catalog-page', ['f_area_of_use' => 'Для ванной']) }}"
+
            style="background-image: url('/fixed/dlja_vannoi_background.png');"
            wire:navigate
            class="bg-cover row-span-1 h-96 relative">

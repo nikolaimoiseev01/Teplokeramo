@@ -1,4 +1,4 @@
-<a wire:key="{{$brand['id']}}" class="p-4 bg-gold-300 hover:shadow max-w-72 flex flex-col gap-2"
+<a wire:key="{{$brand['id']}}" {{ $attributes->merge(['class' => 'p-4 bg-gold-300 hover:shadow max-w-72 flex flex-col gap-2']) }}
    href="{{route('brand-page', $brand['slug'])}}?f_brand_id={{$brand['id']}}" wire:navigate>
     {{$brand->getFIrstMedia('cover')}}
     <h2 class="text-3xl font-bold">{{$brand['name']}}</h2>

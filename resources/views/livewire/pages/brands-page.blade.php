@@ -26,9 +26,9 @@
     </div>
 
 
-    <div class="flex gap-6 flex-wrap md:justify-center ">
+    <div class="grid grid-cols-[repeat(4,_270px)] justify-between gap-8 mb-6 xl:flex xl:flex-wrap">
         @foreach($brands as $brand)
-            <x-cards.brand :brand="$brand"/>
+            <x-cards.brand class="sm:mx-auto" :brand="$brand"/>
         @endforeach
     </div>
 
