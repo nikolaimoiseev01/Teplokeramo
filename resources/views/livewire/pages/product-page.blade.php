@@ -18,11 +18,13 @@
         <div class="flex gap-8 flex-col">
             <div class="flex flex-col gap-4">
                 <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}}</h1>
-                <div class="flex gap-2 text-xl md:text-base">
-                    <x-icon name="flag-country-{{$product['country_code']}}" class="w-4"/>
-                    <p>{{$product['country_name']}}</p>
-                    <p>33x75см</p>
-                </div>
+                @if($product['country_code'])
+                    <div class="flex gap-2 text-xl md:text-base">
+                        <x-icon name="flag-country-{{$product['country_code']}}" class="w-4"/>
+                        <p>{{$product['country_name']}}</p>
+                        <p>33x75см</p>
+                    </div>
+                @endif
             </div>
             <div class="flex gap-8 md:flex-col">
                 <div class="flex flex-col gap-4">
@@ -36,47 +38,52 @@
                         <x-heroicon-s-check-circle class="w-4"/>
                         В наличии
                     </p>
-                    <div class="flex">
-                        <p>Артикул</p>
-                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                        <p>{{$product['article']}}</p>
-                    </div>
-                    <div class="flex">
-                        <p>Тип</p>
-                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                        <p>{{$product['type']}}</p>
-                    </div>
+                    @if($product['article'])
+                        <div class="flex">
+                            <p>Артикул</p>
+                            <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                            <p>{{$product['article']}}</p>
+                        </div>
+                    @endif
+                    @if($product['type'])
+                        <div class="flex">
+                            <p>Тип</p>
+                            <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                            <p>{{$product['type']}}</p>
+                        </div>
+                    @endif
                 </div>
             </div>
-            <div class="flex flex-col gap-8 border rounded-2xl border-gray-200 p-4">
-                <div class="flex gap-4 items-start justify-between md:flex-col">
-                    <div class="flex flex-col gap-4 text-xl">
-                        <p>Товар продается упаковками:</p>
-                        <div class="flex gap-4">
-                            <p class="text-gray-200">1 упак = {{$product['packaged']}}м2</p>
-                            <p class="text-gray-200">Шт в кор: 1</p>
+            @if($product['packaged'])
+                <div class="flex flex-col gap-8 border rounded-2xl border-gray-200 p-4">
+                    <div class="flex gap-4 items-start justify-between md:flex-col">
+                        <div class="flex flex-col gap-4 text-xl">
+                            <p>Товар продается упаковками:</p>
+                            <div class="flex gap-4">
+                                <p class="text-gray-200">1 упак = {{$product['packaged']}}м2</p>
+                                <p class="text-gray-200">Шт в кор: 1</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex px-4 justify-center items-center gap-2 text-red-200 rounded-2xl border-red-200 border">
+                            <x-heroicon-c-heart class="w-4 h-4"/>
+                            <span>В избранное</span>
                         </div>
                     </div>
-                    <div
-                        class="flex px-4 justify-center items-center gap-2 text-red-200 rounded-2xl border-red-200 border">
-                        <x-heroicon-c-heart class="w-4 h-4"/>
-                        <span>В избранное</span>
+                    <div class="flex gap-8 justify-between items-center md:flex-col">
+                        <x-range-input :product="$product"></x-range-input>
+                        <x-link-button wire:ignore id="big-basket-button-{{$product['id']}}"
+                                       {{--                                   onclick="addIdToCookie('basket-products', {{$product['id']}})"--}}
+                                       wire:click="addIdToCookie()"
+                                       class=" w-full">В корзину
+                        </x-link-button>
+                        <div class="flex flex-col ">
+                            <p>Итог</p>
+                            <h1 class="text-nowrap">{{$total_price / 100}} руб</h1>
+                        </div>
                     </div>
                 </div>
-                <div class="flex gap-8 justify-between items-center md:flex-col">
-                    <x-range-input :product="$product"></x-range-input>
-                    <x-link-button wire:ignore id="big-basket-button-{{$product['id']}}"
-                                   {{--                                   onclick="addIdToCookie('basket-products', {{$product['id']}})"--}}
-                                   wire:click="addIdToCookie()"
-                                   class=" w-full">В корзину
-                    </x-link-button>
-                    <div class="flex flex-col ">
-                        <p>Итог</p>
-                        <h1 class="text-nowrap">{{$total_price / 100}} руб</h1>
-                    </div>
-                </div>
-
-            </div>
+            @endif
         </div>
     </section>
 
@@ -94,33 +101,43 @@
                     <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
                     <p class="md:text-end">{{$product->brand['name']}}</p>
                 </div>
-                <div class="flex">
-                    <p>Коллекция</p>
-                    <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                    <p class="md:text-end">{{$product->collection['name']}}</p>
-                </div>
-                <div class="flex">
-                    <p>Толщина плитки</p>
-                    <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                    <p class="md:text-end">{{$product['thickness']}}</p>
-                </div>
-                <div class="flex">
-                    <p>Вес в коробке</p>
-                    <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                    <p class="md:text-end">{{$product['weight']}}</p>
-                </div>
+                @if($product->collection)
+                    <div class="flex">
+                        <p>Коллекция</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p class="md:text-end">{{$product->collection['name']}}</p>
+                    </div>
+                @endif
+                @if($product['thickness'] ?? null)
+                    <div class="flex">
+                        <p>Толщина плитки</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p class="md:text-end">{{$product['thickness']}}</p>
+                    </div>
+                @endif
+                @if($product['weight'])
+                    <div class="flex">
+                        <p>Вес в коробке</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p class="md:text-end">{{$product['weight']}}</p>
+                    </div>
+                @endif
             </div>
             <div class="flex flex-col gap-4 w-1/2 text-xl md:w-full">
-                <div class="flex">
-                    <p>Тип плитки</p>
-                    <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                    <p class="md:text-end">{{$product['type']}}</p>
-                </div>
-                <div class="flex">
-                    <p>Цвет</p>
-                    <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
-                    <p class="md:text-end">{{$product['color']}}</p>
-                </div>
+                @if($product['type'])
+                    <div class="flex">
+                        <p>Тип плитки</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p class="md:text-end">{{$product['type']}}</p>
+                    </div>
+                @endif
+                @if($product['color'])
+                    <div class="flex">
+                        <p>Цвет</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p class="md:text-end">{{$product['color']}}</p>
+                    </div>
+                @endif
             </div>
         </div>
         <div x-show="open" class="mt-4 flex flex-col gap-2">

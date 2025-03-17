@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
         "livewire/volt": "^1.0",
+        "orchestra/parser": "^8.0",
         "outhebox/blade-flags": "^1.5",
         "spatie/laravel-medialibrary": "^10.15",
         "wapmorgan/morphos": "^3.2"

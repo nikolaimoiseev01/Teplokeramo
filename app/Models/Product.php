@@ -26,7 +26,8 @@ class Product extends Model implements HasMedia
         'color',
         'country_code',
         'area_of_use',
-        'slug'
+        'slug',
+        'source'
     ];
 
     protected $casts = [

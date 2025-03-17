@@ -1,6 +1,6 @@
 <div class="flex relative">
     <div class="swiper-button-next next2 text-green-500"></div>
-    <div class="swiper  productSlider">
+    <div class="swiper productSlider">
         <div class="swiper-wrapper">
             @foreach($products as $key => $product)
                 <div
