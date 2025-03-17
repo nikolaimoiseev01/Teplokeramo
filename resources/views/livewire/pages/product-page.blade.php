@@ -14,7 +14,7 @@
         <p>{{$product['name']}}</p>
     </div>
     <section class="flex mb-10 gap-8 xl:flex-col">
-        <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 object-cover md:min-w-px" alt="">
+        <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 max-h-128 object-cover md:min-w-px" alt="">
         <div class="flex gap-8 flex-col">
             <div class="flex flex-col gap-4">
                 <h1 class="text-4xl font-bold ">{{$product->brand['name']}} | {{$product['name']}}</h1>
@@ -54,7 +54,7 @@
                     @endif
                 </div>
             </div>
-            @if($product['packaged'])
+            @if($product['packaged'] > 0)
                 <div class="flex flex-col gap-8 border rounded-2xl border-gray-200 p-4">
                     <div class="flex gap-4 items-start justify-between md:flex-col">
                         <div class="flex flex-col gap-4 text-xl">

@@ -59,13 +59,15 @@ class ParsingXML extends Command
             echo "{$i} из  $total_offers \n";
             $our_brand_id = array_values(array_filter($categoriesArray, fn($item) => $item['id'] === $category_id));
             if ($our_brand_id) {
-                $product = Product::firstOrCreate([
+                $product = Product::updateOrCreate([
                     'name' => (string) $offer->name,
                     'slug' => Str::slug((string) $offer->name, "-")
                 ], [
                     'brand_id' => $our_brand_id[0]['our_id'],
                     'price' => $offer->price * 100,
-                    'source' => 'viaceramica.online'
+                    'source' => 'viaceramica.online',
+                    'packaged' => 0,
+                    'article' => $offer->model
                 ]);
                 if ($product->wasRecentlyCreated) {
                     $pictures = explode(";", $offer->picture);
