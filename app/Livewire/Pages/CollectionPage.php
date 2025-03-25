@@ -19,7 +19,7 @@ class CollectionPage extends Component
 
     public function mount($slug) {
         $this->collection = Collection::where('slug', $slug)->with('product')->first();
-        $this->product_types = implode(', ',  json_decode($this->collection->product->pluck('type')->unique()));
+        $this->product_types = implode(', ',  $this->collection->product->pluck('type')->unique()->toArray());
 //        dd($this->collection->product->pluck('color')->unique()->toArray());
         $this->product_colors = implode(', ',  $this->collection->product->pluck('color')->unique()->toArray());
         $this->product_thickness = implode(', ',  $this->collection->product->pluck('thickness')->unique()->toArray());

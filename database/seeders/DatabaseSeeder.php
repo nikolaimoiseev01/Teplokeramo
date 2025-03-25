@@ -120,22 +120,22 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        $file = new Filesystem;
-        $file->cleanDirectory('storage/app/public/media');
+//        $file = new Filesystem;
+//        $file->cleanDirectory('storage/app/public/media');
 
-//        $this->call(CountriesSeeder::class);
+        $this->call(CountriesSeeder::class);
 
-        $user = User::create([
-            'name' => 'admin',
-            'email' => 'admin@mail.ru',
-            'email_verified_at' => now(),
-            'password' => Hash::make('zXW2QSXj5eyN'),
-            'remember_token' => Str::random(10),
-        ]);
+//        $user = User::create([
+//            'name' => 'admin',
+//            'email' => 'admin@mail.ru',
+//            'email_verified_at' => now(),
+//            'password' => Hash::make('zXW2QSXj5eyN'),
+//            'remember_token' => Str::random(10),
+//        ]);
 
 
-        $this->makeBrands();
-        $this->makeCollections();
+//        $this->makeBrands();
+//        $this->makeCollections();
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

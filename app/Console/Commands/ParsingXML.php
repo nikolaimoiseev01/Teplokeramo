@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Brand;
 use App\Models\Collection;
+use App\Models\Country;
 use App\Models\Product;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
@@ -90,7 +91,7 @@ class ParsingXML extends Command
         // Массив для хранения коллекций и производителей
         $collectionsWithBrands = [];
 
-        // Проход по каждому товару
+        // Проход по каждому товару, чтобы заполнить коллекции и бренды
         foreach ($xml->shop->offers->offer as $offer) {
             $collection = null;
             $manufacturer = null;
@@ -146,6 +147,8 @@ class ParsingXML extends Command
             $brand = Brand::where('name', $params['Производитель'])->first();
             $collection = Collection::where('name', $params['Коллекция'])->first();
 
+            $country = Country::where('name', $params['Страна'])->first();
+
             if($params['Применение'] ?? null) {
                 $areas_of_use = explode(",", $params['Применение'] ?? '');
             } else {
@@ -169,16 +172,16 @@ class ParsingXML extends Command
                     'article' => $params['Артикул'],
                     'packaged' => $params['Количество квадратных метров в коробке'] ?? null,
                     'color' => $params['Цвет'],
-                    'country' => $params['Страна'],
+                    'country_code' => $country['code'],
+                    'country_name' => $country['name'],
                     'area_of_use' => $areas_of_use,
                     'type' => $params['Поверхность'] ?? null,
                     'weight' => $weight
                 ]);
-//                dd($offer->picture);
-//                if ($product->wasRecentlyCreated) {
+                if ($product->wasRecentlyCreated) {
                     $product->clearMediaCollection('cover');
                     $product->addMediaFromUrl((string)$offer->picture)->preservingOriginal()->toMediaCollection('cover');
-//                }
+                }
             }
             $i += 1;
         }

@@ -78,6 +78,9 @@ class ProductResource extends Resource
                                         ->relationship('collection', 'name')
                                         ->label('Коллекция')
                                         ->required(),
+                                    Forms\Components\TextInput::make('source')
+                                        ->label('Источник')
+                                        ->required(),
                                 ])->columns(3)
 
                             ]),
@@ -95,7 +98,6 @@ class ProductResource extends Resource
                                 ])->columns(3),
                                 Forms\Components\Grid::make()->schema([
                                     Forms\Components\TextInput::make('article')
-                                        ->numeric()
                                         ->label('Артикул')
                                         ->maxLength(255),
                                     Forms\Components\TextInput::make('type')
@@ -143,6 +145,9 @@ class ProductResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('country_code')
                     ->label('Страна')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('source')
+                    ->label('Источник')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('Цена (м2)')

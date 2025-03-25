@@ -38,6 +38,11 @@
                         <x-heroicon-s-check-circle class="w-4"/>
                         В наличии
                     </p>
+                    <div class="flex">
+                        <p>ID</p>
+                        <div class="border-b border-gray-200 mb-1 mx-2 flex-1"></div>
+                        <p>{{$product['id']}}</p>
+                    </div>
                     @if($product['article'])
                         <div class="flex">
                             <p>Артикул</p>

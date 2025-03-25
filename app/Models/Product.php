@@ -25,6 +25,7 @@ class Product extends Model implements HasMedia
         'weight',
         'thickness',
         'color',
+        'country_name',
         'country_code',
         'area_of_use',
         'slug',
