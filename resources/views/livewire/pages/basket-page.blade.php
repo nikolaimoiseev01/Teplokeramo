@@ -11,7 +11,7 @@
             @foreach($products as $product)
                 <div
                     class="flex p-5 flex-wrap gap-14 border border-gray-200 rounded-2xl md:flex-col md:items-center md:gap-4">
-                    <img src="{{$product['media_url']}}" class="w-36 object-cover" alt="">
+                    <img src="{{$product['media_url']}}" class="w-36 max-h-36 object-cover" alt="">
                     <div class="flex flex-col gap-1">
                         <a href="{{route('product-page', $product['slug'])}}" wire:navigate
                            class="text-3xl mb-2 font-bold md:text-xl">{{$product['name']}}</a>
@@ -22,7 +22,7 @@
                         </div>
                         <p class="text-green-700 text-xl font-bold flex gap-2">
                             <x-heroicon-s-check-circle class="w-4"/>
-                            В наличии
+                            В наличииn
                         </p>
                         <button onclick="removeIdFromCookie('basket-products', {{$product['id']}})"
                                 wire:click="deleteProduct({{$product['id']}})"
