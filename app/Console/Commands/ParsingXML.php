@@ -159,7 +159,20 @@ class ParsingXML extends Command
             } else {
                 $weight = null;
             }
+            if($params['Количество в коробке'] ?? null) {
+                $packaged_cnt = (float)str_replace(',', '.', $params['Количество в коробке']);
+            } else {
+                $packaged_cnt = null;
+            }
 
+
+            $other_attributes = [
+                'Рисунок' => $params['Рисунок'] ?? null,
+                'Поверхность' => $params['Поверхность'] ?? null,
+                'Вес коробки (кг)' => $params['Вес коробки (кг)'] ?? null,
+                'Тип плитки' => $params['Тип плитки'] ?? null,
+                'Поверхность' => $params['Поверхность'] ?? null
+            ];
             if ($brand && $collection) {
                 $product = Product::updateOrCreate([
                     'name' => (string) $offer->name,
@@ -171,12 +184,14 @@ class ParsingXML extends Command
                     'price' => $offer->price * 100,
                     'article' => $params['Артикул'],
                     'packaged' => $params['Количество квадратных метров в коробке'] ?? null,
+                    'packaged_cnt' => $packaged_cnt,
                     'color' => $params['Цвет'],
+                    'size' => $params['Размер'],
+                    'area_of_use' => $areas_of_use,
                     'country_code' => $country['code'],
                     'country_name' => $country['name'],
-                    'area_of_use' => $areas_of_use,
-                    'type' => $params['Поверхность'] ?? null,
-                    'weight' => $weight
+                    'weight' => $weight,
+                    'other_attributes' => $other_attributes
                 ]);
                 if ($product->wasRecentlyCreated) {
                     $product->clearMediaCollection('cover');

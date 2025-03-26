@@ -29,11 +29,15 @@ class Product extends Model implements HasMedia
         'country_code',
         'area_of_use',
         'slug',
-        'source'
+        'source',
+        'size',
+        'other_attributes',
+        'packaged_cnt'
     ];
 
     protected $casts = [
-        'area_of_use' => 'array'
+        'area_of_use' => 'array',
+        'other_attributes' => 'array'
     ];
 
     public function collection(): BelongsTo
