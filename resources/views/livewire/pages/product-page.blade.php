@@ -14,7 +14,7 @@
         <p>{{$product['name']}}</p>
     </div>
     <section class="flex mb-10 gap-8 xl:flex-col">
-        <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 max-h-128 object-cover md:min-w-px"
+        <img src="{{$product->getFirstMediaUrl('cover')}}" class="w-128 min-w-128 max-h-128 object-contain md:min-w-px"
              alt="">
         <div class="flex gap-8 flex-col">
             <div class="flex flex-col gap-4">
